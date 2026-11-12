@@ -9,7 +9,7 @@ Propuesta del curso en [docs/propuesta.md](docs/propuesta.md).
 ```
 frontend/   Angular 22 con model-viewer, Tailwind y Spartan UI
 backend/    FastAPI, fichas de platos en data/platos/*.json y asistente con Gemini
-modelos/    scripts que generan los GLB de cada paso
+modelos/    scripts que generan los GLB de cada paso de los tres platos
 docs/       propuesta y documentación del curso
 ```
 
@@ -59,26 +59,31 @@ cloudflared tunnel --url http://localhost:8090
 
 ## Modelos 3D
 
-Los modelos actuales de la causa son **provisionales**: los genera un script con formas simples, así la app funciona de punta a punta mientras se hacen los definitivos.
+Los modelos de los tres platos se generan por script con `trimesh`: perfiles de revolución para la vajilla, formas con ruido para los alimentos, color por vértice y normales suaves. Son 15 archivos, uno por paso, de entre 100 y 450 KB.
 
 ```bash
-uv run modelos/generar_causa.py   # escribe frontend/public/modelos/causa-limena/paso-1..5.glb
+uv run modelos/generar.py           # los tres platos
+uv run modelos/generar.py rocoto    # solo los platos cuyo id contenga ese texto
 ```
 
-Para reemplazarlos por modelos hechos en Blender o con IA (Meshy, Tripo, Hunyuan3D):
+- `modelos/base.py`: utilidades de geometría y color, y el menaje común (plato, tabla, bol, olla, sartén).
+- `modelos/causa.py`, `modelos/tacacho.py`, `modelos/rocoto.py`: una función por paso de cada plato.
+
+Todo se arma en metros, a tamaño real, con el centro en el origen y la base en y = 0.
+
+Para reemplazar un paso por un modelo hecho en Blender o con IA (Meshy, Tripo, Hunyuan3D):
 
 1. Mantener la misma escala en metros, con el centro del plato en el origen y la base en y = 0.
-2. Exportar desde Blender a glTF binario (`.glb`), con Y hacia arriba.
+2. Exportar a glTF binario (`.glb`), con Y hacia arriba.
 3. Optimizar y apuntar a menos de 3 MB por paso:
    ```bash
    npx @gltf-transform/cli optimize entrada.glb salida.glb --compress meshopt --texture-compress webp --texture-size 1024
    ```
-4. Guardar como `paso-N.glb` en la misma carpeta. No hace falta tocar código.
+4. Guardar como `paso-N.glb` en la carpeta del plato. No hace falta tocar código.
 
-Para un plato nuevo: crear `backend/data/platos/<id>.json` con la misma forma que `causa-limena.json` y poner sus modelos en `frontend/public/modelos/<id>/`.
+Para un plato nuevo: crear `backend/data/platos/<id>.json` con la misma forma que `causa-limena.json`, poner sus modelos en `frontend/public/modelos/<id>/` y agregar su id a `ORDEN` en `backend/app/platos.py` si importa su posición en el inicio.
 
 ## Pendientes
 
-- Verificar la ficha de la causa (historia y receta) con fuentes citables antes de la entrega. Las dos versiones sobre el origen del nombre están marcadas como versiones populares, no como hechos.
-- Modelos definitivos de la causa y fichas de tacacho con cecina y rocoto relleno.
+- Verificar las tres fichas (historia y receta) con fuentes citables antes de la entrega. Los orígenes de los nombres y la leyenda del rocoto relleno están redactados como versiones populares, no como hechos.
 - Pruebas E2E con Playwright y prueba de uso en celulares Android reales.

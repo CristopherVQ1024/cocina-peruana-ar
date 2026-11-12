@@ -1,9 +1,14 @@
+from pathlib import Path
+
 import pytest
 from fastapi.testclient import TestClient
 
 from app.asistente import get_asistente
 from app.esquemas import RespuestaAsistente
 from app.main import app
+
+PLATOS = ["causa-limena", "tacacho-con-cecina", "rocoto-relleno"]
+MODELOS = Path(__file__).resolve().parents[2] / "frontend/public/modelos"
 
 
 class AsistenteFalso:
@@ -38,10 +43,17 @@ def test_lista_platos(cliente):
     assert causa["modelo"].endswith("paso-5.glb")
 
 
-def test_detalle_con_pasos_y_modelos(cliente):
-    plato = cliente.get("/api/platos/causa-limena").json()
+def test_lista_los_tres_platos_en_orden(cliente):
+    ids = [p["id"] for p in cliente.get("/api/platos").json()]
+    assert ids == PLATOS
+
+
+@pytest.mark.parametrize("plato_id", PLATOS)
+def test_detalle_con_pasos_y_modelos(cliente, plato_id):
+    plato = cliente.get(f"/api/platos/{plato_id}").json()
     assert [p["numero"] for p in plato["pasos"]] == [1, 2, 3, 4, 5]
-    assert all(p["modelo"].startswith("/modelos/causa-limena/") for p in plato["pasos"])
+    assert all(p["modelo"] == f"/modelos/{plato_id}/paso-{p['numero']}.glb" for p in plato["pasos"])
+    assert all((MODELOS / plato_id / f"paso-{p['numero']}.glb").is_file() for p in plato["pasos"])
 
 
 def test_plato_inexistente(cliente):

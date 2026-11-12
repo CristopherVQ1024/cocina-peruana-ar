@@ -1,0 +1,59 @@
+{
+  "id": "tacacho-con-cecina",
+  "nombre": "Tacacho con cecina",
+  "region": "San Martín, selva",
+  "resumen": "Bolas de plátano verde asado y majado con manteca de cerdo, servidas con cecina, chorizo regional y ají de cocona.",
+  "historia": "El tacacho con cecina es uno de los platos más representativos de la Amazonía peruana y se sirve sobre todo en San Martín, Loreto y Ucayali. Se prepara con plátano verde, llamado bellaco o inguiri en la selva, que se asa o se sancocha y luego se maja con manteca de cerdo. Sobre el nombre, una versión extendida lo relaciona con la expresión quechua taka chu, que se traduce como lo golpeado, por la forma en que se maja el plátano. La cecina es carne de cerdo salada, secada y ahumada, una forma de conservar la carne en el clima cálido y húmedo de la selva. Es un plato habitual del desayuno y de la fiesta de San Juan, que se celebra cada 24 de junio.",
+  "porciones": 4,
+  "ingredientes": [
+    { "nombre": "Plátano verde bellaco", "cantidad": "6 unidades" },
+    { "nombre": "Manteca de cerdo", "cantidad": "3 cucharadas" },
+    { "nombre": "Chicharrón de cerdo picado", "cantidad": "150 g" },
+    { "nombre": "Cecina de cerdo", "cantidad": "500 g" },
+    { "nombre": "Chorizo regional", "cantidad": "4 unidades" },
+    { "nombre": "Cocona", "cantidad": "2 unidades" },
+    { "nombre": "Ají charapita", "cantidad": "4 unidades" },
+    { "nombre": "Cebolla roja", "cantidad": "1/2 unidad" },
+    { "nombre": "Culantro", "cantidad": "al gusto" },
+    { "nombre": "Limón", "cantidad": "1 unidad, en jugo" },
+    { "nombre": "Aceite vegetal", "cantidad": "2 cucharadas" },
+    { "nombre": "Sal", "cantidad": "al gusto" }
+  ],
+  "pasos": [
+    {
+      "numero": 1,
+      "titulo": "Asar los plátanos",
+      "descripcion": "Pela los plátanos verdes y ásalos a la brasa o en una sartén sin aceite, dándoles vuelta hasta que estén dorados por fuera y suaves por dentro. También se pueden sancochar.",
+      "duracion_min": 25,
+      "modelo": "/modelos/tacacho-con-cecina/paso-1.glb"
+    },
+    {
+      "numero": 2,
+      "titulo": "Majar con manteca",
+      "descripcion": "Con los plátanos aún calientes, májalos en un mortero de madera con la manteca de cerdo, el chicharrón picado y sal. La masa debe quedar gruesa, con trozos, no como un puré fino.",
+      "duracion_min": 10,
+      "modelo": "/modelos/tacacho-con-cecina/paso-2.glb"
+    },
+    {
+      "numero": 3,
+      "titulo": "Formar las bolas",
+      "descripcion": "Toma porciones de masa y forma con las manos bolas del tamaño de un puño. Presiona para que queden compactas y no se desarmen.",
+      "duracion_min": 5,
+      "modelo": "/modelos/tacacho-con-cecina/paso-3.glb"
+    },
+    {
+      "numero": 4,
+      "titulo": "Freír la cecina y el chorizo",
+      "descripcion": "Calienta el aceite en una sartén y fríe la cecina por ambos lados hasta que dore. En la misma sartén fríe el chorizo regional hasta que esté cocido.",
+      "duracion_min": 12,
+      "modelo": "/modelos/tacacho-con-cecina/paso-4.glb"
+    },
+    {
+      "numero": 5,
+      "titulo": "Servir con ají de cocona",
+      "descripcion": "Pica la cocona, la cebolla, el ají charapita y el culantro, y mézclalos con jugo de limón y sal. Sirve dos bolas de tacacho con la cecina, el chorizo y el ají de cocona al lado.",
+      "duracion_min": 8,
+      "modelo": "/modelos/tacacho-con-cecina/paso-5.glb"
+    }
+  ]
+}

@@ -17,7 +17,7 @@ Reglas:
 - Puedes traducir o explicar nombres de ingredientes, pero sin cambiar la receta."""
 
 INSTRUCCIONES_TRADUCCION = """Traduce al {idioma} todos los textos de esta ficha de un plato peruano.
-Mantén sin traducir los nombres propios de platos e ingredientes típicos (causa, ají amarillo, papa amarilla, aceituna de botija) y añade entre paréntesis una explicación breve la primera vez que aparezcan.
+Mantén sin traducir los nombres propios de platos e ingredientes típicos (causa, ají amarillo, papa amarilla, aceituna de botija, tacacho, cecina, cocona, ají charapita, rocoto, ají panca, queso paria) y añade entre paréntesis una explicación breve la primera vez que aparezcan.
 No cambies id, numero, duracion_min, porciones ni modelo."""
 
 

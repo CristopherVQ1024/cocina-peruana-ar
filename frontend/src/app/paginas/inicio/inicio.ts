@@ -22,8 +22,4 @@ export class Inicio {
       .platos()
       .pipe(catchError(() => of<PlatoResumen[] | null>(null))),
   );
-  protected readonly proximos = [
-    { nombre: 'Tacacho con cecina', region: 'San Martín, selva' },
-    { nombre: 'Rocoto relleno', region: 'Arequipa, sierra' },
-  ];
 }

@@ -1,0 +1,61 @@
+{
+  "id": "rocoto-relleno",
+  "nombre": "Rocoto relleno",
+  "region": "Arequipa, sierra",
+  "resumen": "Rocoto horneado relleno de carne picada, maní y pasas, cubierto con queso y servido con pastel de papa.",
+  "historia": "El rocoto relleno es uno de los platos emblemáticos de la cocina arequipeña y de sus picanterías. El rocoto es un ají carnoso y muy picante, cultivado en los Andes desde tiempos prehispánicos, que se distingue por sus semillas negras. Para que se pueda comer entero se le quitan las venas y las semillas y se hierve varias veces, cambiando el agua, hasta bajar el picor. Una leyenda popular atribuye la receta al cocinero Manuel Masías, quien la habría preparado para recuperar el alma de su hija. Se sirve tradicionalmente con pastel de papa, un gratinado de láminas de papa con queso y leche.",
+  "porciones": 4,
+  "ingredientes": [
+    { "nombre": "Rocoto", "cantidad": "4 unidades grandes" },
+    { "nombre": "Carne de res picada", "cantidad": "400 g" },
+    { "nombre": "Cebolla roja picada", "cantidad": "2 unidades" },
+    { "nombre": "Ajo molido", "cantidad": "1 cucharada" },
+    { "nombre": "Ají panca molido", "cantidad": "2 cucharadas" },
+    { "nombre": "Maní tostado y molido", "cantidad": "50 g" },
+    { "nombre": "Pasas", "cantidad": "2 cucharadas" },
+    { "nombre": "Aceituna de botija picada", "cantidad": "6 unidades" },
+    { "nombre": "Huevo duro picado", "cantidad": "2 unidades" },
+    { "nombre": "Queso paria o queso fresco", "cantidad": "4 tajadas" },
+    { "nombre": "Leche evaporada", "cantidad": "1 taza" },
+    { "nombre": "Huevo", "cantidad": "2 unidades" },
+    { "nombre": "Azúcar, sal y vinagre", "cantidad": "para hervir los rocotos" },
+    { "nombre": "Pastel de papa", "cantidad": "4 porciones, para acompañar" }
+  ],
+  "pasos": [
+    {
+      "numero": 1,
+      "titulo": "Limpiar y hervir los rocotos",
+      "descripcion": "Corta la tapa de cada rocoto y guárdala. Con guantes, retira las venas y las semillas. Hierve los rocotos y sus tapas tres veces en agua con sal, azúcar y un chorro de vinagre, cambiando el agua cada vez, para bajar el picor.",
+      "duracion_min": 30,
+      "modelo": "/modelos/rocoto-relleno/paso-1.glb"
+    },
+    {
+      "numero": 2,
+      "titulo": "Preparar el relleno",
+      "descripcion": "Dora la cebolla con el ajo y el ají panca. Agrega la carne picada y cocina hasta que cambie de color. Añade el maní, las pasas, la aceituna y el huevo duro picado, y sazona con sal y pimienta.",
+      "duracion_min": 20,
+      "modelo": "/modelos/rocoto-relleno/paso-2.glb"
+    },
+    {
+      "numero": 3,
+      "titulo": "Rellenar",
+      "descripcion": "Acomoda los rocotos escurridos en una fuente para horno y llénalos con el relleno hasta el borde, presionando un poco con la cuchara.",
+      "duracion_min": 5,
+      "modelo": "/modelos/rocoto-relleno/paso-3.glb"
+    },
+    {
+      "numero": 4,
+      "titulo": "Cubrir con queso",
+      "descripcion": "Pon una tajada de queso sobre cada rocoto y encima su tapa. Bate la leche evaporada con los huevos y una pizca de sal, y vierte la mezcla en la fuente y sobre los rocotos.",
+      "duracion_min": 5,
+      "modelo": "/modelos/rocoto-relleno/paso-4.glb"
+    },
+    {
+      "numero": 5,
+      "titulo": "Hornear y servir",
+      "descripcion": "Hornea a 180 °C durante unos 25 minutos, hasta que el queso se derrita y dore. Sirve cada rocoto caliente con una porción de pastel de papa.",
+      "duracion_min": 25,
+      "modelo": "/modelos/rocoto-relleno/paso-5.glb"
+    }
+  ]
+}

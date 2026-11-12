@@ -19,16 +19,8 @@
   } @else if (platos() === null) {
     <p class="aviso" role="alert">{{ t().errorPlato }}</p>
   } @else {
-    <div class="tarjeta tarjeta-esqueleto" aria-hidden="true"></div>
-  }
-
-  @for (plato of proximos; track plato.nombre) {
-    <article class="tarjeta tarjeta-proxima">
-      <div class="tarjeta-cuerpo">
-        <span class="region">{{ plato.region }}</span>
-        <h2>{{ plato.nombre }}</h2>
-        <span class="etiqueta">{{ t().proximamente }}</span>
-      </div>
-    </article>
+    @for (hueco of [1, 2, 3]; track hueco) {
+      <div class="tarjeta tarjeta-esqueleto" aria-hidden="true"></div>
+    }
   }
 </section>

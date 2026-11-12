@@ -23,26 +23,21 @@
 
 .platos {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
 .tarjeta {
   display: grid;
+  grid-template-rows: auto 1fr;
   overflow: hidden;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 20px;
-
-  &:first-child {
-    grid-row: span 2;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  }
 }
 
 .tarjeta-visor {
-  min-height: 420px;
+  height: 320px;
   border-radius: 0;
 }
 
@@ -51,16 +46,16 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  padding: 32px;
+  padding: 28px;
 
   h2 {
     margin: 0;
-    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    font-size: clamp(1.5rem, 2.4vw, 1.9rem);
     font-weight: 500;
   }
 
   p {
-    margin: 0;
+    margin: 0 0 10px;
     color: var(--muted-foreground);
   }
 }
@@ -79,31 +74,13 @@
   color: var(--primary);
 }
 
-.tarjeta-proxima {
-  background: var(--muted);
-
-  h2 {
-    font-size: 1.4rem;
-    color: var(--muted-foreground);
-  }
-}
-
-.etiqueta {
-  margin-top: auto;
-  padding: 4px 12px;
-  font-size: 0.8rem;
-  color: var(--secondary-foreground);
-  background: var(--secondary);
-  border-radius: 999px;
-}
-
 .tarjeta-esqueleto {
-  min-height: 420px;
+  min-height: 520px;
   background: var(--muted);
 }
 
 .aviso {
-  grid-row: span 2;
+  grid-column: 1 / -1;
   color: var(--destructive);
 }
 
@@ -116,13 +93,12 @@
     grid-template-columns: 1fr;
   }
 
-  .tarjeta:first-child {
-    grid-row: auto;
-    grid-template-columns: 1fr;
+  .tarjeta-visor {
+    height: 280px;
   }
 
-  .tarjeta-visor {
-    min-height: 300px;
+  .tarjeta-esqueleto {
+    min-height: 360px;
   }
 
   .tarjeta-cuerpo {
