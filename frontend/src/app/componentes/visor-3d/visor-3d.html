@@ -1,0 +1,46 @@
+<model-viewer
+  #visor
+  [attr.src]="src()"
+  [attr.alt]="alt()"
+  [attr.camera-controls]="vitrina() ? null : ''"
+  [attr.auto-rotate]="vitrina() ? '' : null"
+  [attr.ar]="conAr() ? '' : null"
+  ar-modes="webxr scene-viewer quick-look"
+  ar-scale="fixed"
+  ar-placement="floor"
+  touch-action="pan-y"
+  interaction-prompt="none"
+  camera-orbit="35deg 62deg auto"
+  shadow-intensity="1"
+  shadow-softness="0.9"
+  environment-image="neutral"
+  exposure="1.05"
+  (progress)="alProgresar($event)"
+  (load)="alCargar()"
+  (error)="alFallar()"
+  (ar-status)="alCambiarAr($event)"
+>
+  <button slot="ar-button" hlmBtn size="lg" class="boton-ar">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+      <path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z" />
+      <path d="m4 7.5 8 4.5 8-4.5M12 12v9" />
+    </svg>
+    {{ t().verEnMesa }}
+  </button>
+  <div slot="progress-bar"></div>
+</model-viewer>
+
+@if (estado() === 'cargando') {
+  <div class="estado" role="status">
+    <span class="barra"><span [style.transform]="'scaleX(' + progreso() + ')'"></span></span>
+    <span class="estado-texto">{{ t().cargandoModelo }}</span>
+  </div>
+} @else if (estado() === 'error') {
+  <p class="estado estado-error" role="alert">{{ t().errorModelo }}</p>
+}
+
+@if (arFallo()) {
+  <p class="ayuda-ar ayuda-ar-error" role="alert">{{ t().arFallo }}</p>
+} @else if (conAr() && estado() === 'listo' && !puedeAr()) {
+  <p class="ayuda-ar">{{ t().arAyuda }}</p>
+}

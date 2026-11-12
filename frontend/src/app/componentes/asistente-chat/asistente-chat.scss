@@ -1,0 +1,135 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+header p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}
+
+.mensajes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 360px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.mensaje {
+  max-width: 85%;
+  margin: 0;
+  padding: 10px 14px;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  background: var(--muted);
+  border-radius: 16px 16px 16px 4px;
+  animation: entrar 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  &.propio {
+    align-self: flex-end;
+    color: var(--primary-foreground);
+    background: var(--primary);
+    border-radius: 16px 16px 4px 16px;
+  }
+
+  &.fuera {
+    background: var(--secondary);
+  }
+}
+
+.sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sugerencia {
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 0.88rem;
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.pensando {
+  display: flex;
+  gap: 5px;
+  padding: 14px 16px;
+}
+
+.punto {
+  width: 6px;
+  height: 6px;
+  background: var(--muted-foreground);
+  border-radius: 50%;
+  animation: latir 1s ease-in-out infinite;
+
+  &:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+}
+
+.error {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--destructive);
+}
+
+.entrada {
+  display: flex;
+  gap: 8px;
+
+  input {
+    flex: 1;
+    min-width: 0;
+    height: 40px;
+    // 16px evita el zoom del input en movil
+    font-size: 16px;
+    border-radius: 999px;
+    padding-inline: 16px;
+  }
+
+  button {
+    border-radius: 999px;
+    padding-inline: 18px;
+  }
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes latir {
+  50% {
+    opacity: 0.3;
+  }
+}

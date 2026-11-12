@@ -1,0 +1,105 @@
+<div class="page-width">
+  <a routerLink="/" class="volver">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+    {{ t().volver }}
+  </a>
+</div>
+
+@if (plato.error() && !datos()) {
+  <div class="page-width aviso" role="alert">
+    <p>{{ t().errorPlato }}</p>
+    <button hlmBtn variant="outline" (click)="plato.reload()">{{ t().reintentar }}</button>
+  </div>
+} @else if (datos(); as p) {
+  <div class="plato page-width">
+    <div class="escena">
+      @if (paso(); as actual) {
+        <app-visor-3d
+          class="visor"
+          [src]="actual.modelo"
+          [alt]="p.nombre + ', ' + t().paso + ' ' + actual.numero + ': ' + actual.titulo"
+          [siguiente]="siguienteModelo()"
+        />
+      }
+    </div>
+
+    <div class="contenido">
+      <header class="titulo">
+        <span class="region">{{ p.region }}</span>
+        <h1>{{ p.nombre }}</h1>
+        <p>{{ p.resumen }}</p>
+      </header>
+
+      <section class="pasos" [attr.aria-label]="t().preparacion">
+        <div class="pasos-cabecera">
+          <h2>{{ t().preparacion }}</h2>
+          <span class="contador">{{ t().paso }} {{ indice() + 1 }} {{ t().de }} {{ pasos().length }}</span>
+        </div>
+
+        <ol>
+          @for (item of pasos(); track item.numero; let i = $index) {
+            <li>
+              <button
+                type="button"
+                class="paso"
+                [class.activo]="i === indice()"
+                [class.hecho]="i < indice()"
+                [attr.aria-current]="i === indice() ? 'step' : null"
+                (click)="irA(i)"
+              >
+                <span class="paso-numero">{{ item.numero }}</span>
+                <span class="paso-texto">
+                  <span class="paso-titulo">
+                    {{ item.titulo }}
+                    <span class="paso-duracion">{{ item.duracion_min }} {{ t().min }}</span>
+                  </span>
+                  <span class="paso-descripcion">{{ item.descripcion }}</span>
+                </span>
+              </button>
+            </li>
+          }
+        </ol>
+
+        <div class="navegacion">
+          <button hlmBtn variant="outline" size="lg" [disabled]="indice() === 0" (click)="irA(indice() - 1)">
+            {{ t().anterior }}
+          </button>
+          <button hlmBtn size="lg" [disabled]="indice() === pasos().length - 1" (click)="irA(indice() + 1)">
+            {{ t().siguiente }}
+          </button>
+        </div>
+      </section>
+
+      <section class="ficha">
+        <div>
+          <h2>{{ t().ingredientes }} <small>{{ p.porciones }} {{ t().porciones }}</small></h2>
+          <ul class="ingredientes">
+            @for (ingrediente of p.ingredientes; track ingrediente.nombre) {
+              <li><span>{{ ingrediente.nombre }}</span><span>{{ ingrediente.cantidad }}</span></li>
+            }
+          </ul>
+        </div>
+        <div>
+          <h2>{{ t().historia }}</h2>
+          <p class="historia">{{ p.historia }}</p>
+        </div>
+      </section>
+
+      @defer (on viewport) {
+        <app-asistente-chat [platoId]="p.id" [paso]="indice() + 1" />
+      } @placeholder {
+        <div class="chat-reserva"></div>
+      } @error {
+        <p class="aviso">{{ t().errorAsistente }}</p>
+      }
+    </div>
+  </div>
+} @else {
+  <div class="plato page-width" aria-busy="true">
+    <div class="escena"><div class="visor esqueleto"></div></div>
+    <div class="contenido">
+      <div class="esqueleto esqueleto-titulo"></div>
+      <div class="esqueleto esqueleto-texto"></div>
+    </div>
+  </div>
+}

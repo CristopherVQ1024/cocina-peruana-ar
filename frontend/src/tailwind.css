@@ -1,0 +1,42 @@
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css';
+
+@import '@spartan-ng/brain/hlm-tailwind-preset.css';
+
+:root {
+  color-scheme: light;
+
+  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+
+  --radius: 0.75rem;
+  --background: oklch(0.975 0.012 85);
+  --foreground: oklch(0.25 0.03 40);
+  --card: oklch(0.99 0.006 85);
+  --card-foreground: oklch(0.25 0.03 40);
+  --popover: oklch(0.99 0.006 85);
+  --popover-foreground: oklch(0.25 0.03 40);
+  --primary: oklch(0.47 0.14 35);
+  --primary-foreground: oklch(0.98 0.01 85);
+  --secondary: oklch(0.93 0.03 85);
+  --secondary-foreground: oklch(0.3 0.04 40);
+  --muted: oklch(0.945 0.016 80);
+  --muted-foreground: oklch(0.5 0.03 50);
+  --accent: oklch(0.84 0.15 82);
+  --accent-foreground: oklch(0.28 0.05 50);
+  --destructive: oklch(0.55 0.2 27);
+  --border: oklch(0.89 0.02 75);
+  --input: oklch(0.87 0.02 75);
+  --ring: oklch(0.47 0.14 35);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

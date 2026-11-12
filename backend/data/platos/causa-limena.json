@@ -1,0 +1,58 @@
+{
+  "id": "causa-limena",
+  "nombre": "Causa limeña",
+  "region": "Lima, costa",
+  "resumen": "Plato frío de capas de papa amarilla sazonada con ají amarillo y limón, rellena de pollo y palta.",
+  "historia": "La causa se prepara con papa amarilla, un cultivo nativo de los Andes, y ají amarillo, dos ingredientes de origen prehispánico. Sobre el origen de su nombre circulan varias versiones. Una lo relaciona con la palabra quechua kausay, que se traduce como sustento o lo que da vida. Otra cuenta que durante la Guerra del Pacífico, entre 1879 y 1883, mujeres limeñas la vendían para reunir fondos para la causa del país. Hoy es uno de los platos fríos más conocidos de Lima y se sirve como entrada.",
+  "porciones": 4,
+  "ingredientes": [
+    { "nombre": "Papa amarilla", "cantidad": "1 kg" },
+    { "nombre": "Ají amarillo licuado", "cantidad": "3 cucharadas" },
+    { "nombre": "Limón", "cantidad": "3 unidades, en jugo" },
+    { "nombre": "Aceite vegetal", "cantidad": "1/4 de taza" },
+    { "nombre": "Pechuga de pollo cocida y deshilachada", "cantidad": "2 tazas" },
+    { "nombre": "Mayonesa", "cantidad": "1/2 taza" },
+    { "nombre": "Palta", "cantidad": "2 unidades" },
+    { "nombre": "Huevo duro", "cantidad": "2 unidades" },
+    { "nombre": "Aceituna de botija", "cantidad": "4 unidades" },
+    { "nombre": "Perejil", "cantidad": "al gusto" },
+    { "nombre": "Sal y pimienta", "cantidad": "al gusto" }
+  ],
+  "pasos": [
+    {
+      "numero": 1,
+      "titulo": "Sancochar las papas",
+      "descripcion": "Cocina las papas amarillas con piel en agua con sal hasta que estén suaves. Pélalas aún calientes y prénsalas hasta obtener un puré sin grumos. Deja enfriar.",
+      "duracion_min": 30,
+      "modelo": "/modelos/causa-limena/paso-1.glb"
+    },
+    {
+      "numero": 2,
+      "titulo": "Preparar la masa",
+      "descripcion": "Mezcla el puré frío con el ají amarillo, el jugo de limón, el aceite, sal y pimienta. Amasa hasta que quede suave, de color amarillo intenso y no se pegue a las manos.",
+      "duracion_min": 10,
+      "modelo": "/modelos/causa-limena/paso-2.glb"
+    },
+    {
+      "numero": 3,
+      "titulo": "Primera capa",
+      "descripcion": "Unta con un poco de aceite el interior de un aro de cocina sobre el plato. Coloca una capa de masa de unos dos centímetros y presiona para que quede pareja.",
+      "duracion_min": 5,
+      "modelo": "/modelos/causa-limena/paso-3.glb"
+    },
+    {
+      "numero": 4,
+      "titulo": "Relleno",
+      "descripcion": "Cubre la masa con láminas de palta y unas gotas de limón. Encima añade el pollo deshilachado mezclado con la mayonesa.",
+      "duracion_min": 10,
+      "modelo": "/modelos/causa-limena/paso-4.glb"
+    },
+    {
+      "numero": 5,
+      "titulo": "Cerrar y decorar",
+      "descripcion": "Termina con otra capa de masa y alisa la superficie. Retira el aro con cuidado y decora con rodajas de huevo duro, aceituna de botija y perejil. Sírvela fría.",
+      "duracion_min": 5,
+      "modelo": "/modelos/causa-limena/paso-5.glb"
+    }
+  ]
+}

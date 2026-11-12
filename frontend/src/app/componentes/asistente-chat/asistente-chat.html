@@ -1,0 +1,43 @@
+<section class="chat" [attr.aria-label]="t().asistente">
+  <header>
+    <h2>{{ t().asistente }}</h2>
+    <p>{{ t().asistenteBajada }}</p>
+  </header>
+
+  <div #lista class="mensajes" aria-live="polite">
+    @for (mensaje of mensajes(); track $index) {
+      <p class="mensaje" [class.propio]="mensaje.rol === 'usuario'" [class.fuera]="mensaje.fueraDeFicha">
+        {{ mensaje.texto }}
+      </p>
+    } @empty {
+      <div class="sugerencias">
+        @for (sugerencia of t().sugerencias; track sugerencia) {
+          <button type="button" class="sugerencia" (click)="enviar(campo, sugerencia)">{{ sugerencia }}</button>
+        }
+      </div>
+    }
+    @if (esperando()) {
+      <p class="mensaje pensando" role="status">
+        <span class="sr-only">{{ t().pensando }}</span>
+        <span class="punto"></span><span class="punto"></span><span class="punto"></span>
+      </p>
+    }
+    @if (error()) {
+      <p class="error" role="alert">{{ t().errorAsistente }}</p>
+    }
+  </div>
+
+  <form class="entrada" (submit)="$event.preventDefault(); enviar(campo)">
+    <input
+      #campo
+      hlmInput
+      type="text"
+      maxlength="500"
+      autocomplete="off"
+      enterkeyhint="send"
+      [placeholder]="t().placeholder"
+      [attr.aria-label]="t().placeholder"
+    />
+    <button hlmBtn size="lg" type="submit" [disabled]="esperando()">{{ t().enviar }}</button>
+  </form>
+</section>

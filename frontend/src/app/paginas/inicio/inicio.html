@@ -1,0 +1,34 @@
+<section class="intro page-width">
+  <h1>{{ t().titular }}</h1>
+  <p>{{ t().bajada }}</p>
+</section>
+
+<section class="platos page-width">
+  @if (platos(); as lista) {
+    @for (plato of lista; track plato.id) {
+      <article class="tarjeta">
+        <app-visor-3d class="tarjeta-visor" [src]="plato.modelo" [alt]="plato.nombre" [conAr]="false" [vitrina]="true" />
+        <div class="tarjeta-cuerpo">
+          <span class="region">{{ plato.region }}</span>
+          <h2>{{ plato.nombre }}</h2>
+          <p>{{ plato.resumen }}</p>
+          <a hlmBtn size="lg" class="tarjeta-accion" [routerLink]="['/plato', plato.id]">{{ t().verPlato }}</a>
+        </div>
+      </article>
+    }
+  } @else if (platos() === null) {
+    <p class="aviso" role="alert">{{ t().errorPlato }}</p>
+  } @else {
+    <div class="tarjeta tarjeta-esqueleto" aria-hidden="true"></div>
+  }
+
+  @for (plato of proximos; track plato.nombre) {
+    <article class="tarjeta tarjeta-proxima">
+      <div class="tarjeta-cuerpo">
+        <span class="region">{{ plato.region }}</span>
+        <h2>{{ plato.nombre }}</h2>
+        <span class="etiqueta">{{ t().proximamente }}</span>
+      </div>
+    </article>
+  }
+</section>

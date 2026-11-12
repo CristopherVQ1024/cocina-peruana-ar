@@ -1,0 +1,282 @@
+:host {
+  display: block;
+  padding-bottom: 64px;
+}
+
+.volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding-block: 4px 16px;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--foreground);
+  }
+}
+
+.plato {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.escena {
+  position: sticky;
+  top: 16px;
+}
+
+.visor {
+  display: block;
+  height: min(78vh, 720px);
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-width: 0;
+}
+
+.titulo {
+  h1 {
+    margin: 6px 0 12px;
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 500;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--muted-foreground);
+  }
+}
+
+.region {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  small {
+    margin-left: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+  }
+}
+
+.pasos-cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.contador {
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-foreground);
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paso {
+  display: flex;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+
+  &:hover {
+    background: var(--muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  &.activo {
+    background: var(--card);
+    border-color: var(--border);
+    box-shadow: 0 2px 10px oklch(0.4 0.05 50 / 0.06);
+  }
+}
+
+.paso-numero {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-foreground);
+  background: var(--muted);
+  border-radius: 50%;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+
+  .hecho & {
+    color: var(--accent-foreground);
+    background: var(--accent);
+  }
+
+  .activo & {
+    color: var(--primary-foreground);
+    background: var(--primary);
+  }
+}
+
+.paso-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.paso-titulo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  font-weight: 600;
+}
+
+.paso-duracion {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+
+.paso-descripcion {
+  display: none;
+  color: var(--muted-foreground);
+
+  .activo & {
+    display: block;
+  }
+}
+
+.navegacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+
+  button {
+    border-radius: 999px;
+  }
+}
+
+.ficha {
+  display: grid;
+  gap: 32px;
+}
+
+.ingredientes {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 9px;
+    border-bottom: 1px solid var(--border);
+
+    span:last-child {
+      flex-shrink: 0;
+      color: var(--muted-foreground);
+      text-align: right;
+    }
+  }
+}
+
+.historia {
+  margin: 12px 0 0;
+  max-width: 62ch;
+}
+
+.aviso {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--destructive);
+}
+
+.chat-reserva {
+  min-height: 320px;
+}
+
+.esqueleto {
+  background: var(--muted);
+  border-radius: 20px;
+}
+
+.esqueleto-titulo {
+  height: 80px;
+}
+
+.esqueleto-texto {
+  height: 240px;
+}
+
+@media (max-width: 900px) {
+  .plato {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .escena {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding-top: 8px;
+    background: var(--background);
+  }
+
+  .visor {
+    height: 42svh;
+    min-height: 280px;
+  }
+
+  .navegacion {
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    padding-block: 12px calc(12px + env(safe-area-inset-bottom));
+    background: linear-gradient(transparent, var(--background) 30%);
+  }
+}

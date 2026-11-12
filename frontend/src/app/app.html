@@ -1,0 +1,18 @@
+<header class="cabecera page-width">
+  <a routerLink="/" class="marca">
+    <span class="marca-sello" aria-hidden="true"></span>
+    {{ idioma.t().marca }}
+  </a>
+  <label class="selector-idioma">
+    <span class="sr-only">Idioma</span>
+    <select [value]="idioma.actual()" (change)="cambiarIdioma($event)">
+      @for (opcion of idiomas; track opcion.codigo) {
+        <option [value]="opcion.codigo">{{ opcion.nombre }}</option>
+      }
+    </select>
+  </label>
+</header>
+
+<main>
+  <router-outlet />
+</main>

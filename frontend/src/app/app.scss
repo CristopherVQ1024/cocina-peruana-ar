@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 18px;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.marca-sello {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent) 0 50%, var(--primary) 0);
+}
+
+.selector-idioma select {
+  height: 36px;
+  padding: 0 32px 0 12px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  background: var(--card)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23705a48' stroke-width='1.8'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E")
+    no-repeat right 12px center;
+  border: 1px solid var(--input);
+  border-radius: 999px;
+  appearance: none;
+  cursor: pointer;
+}

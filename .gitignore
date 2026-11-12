@@ -1,0 +1,9 @@
+.env
+.claude/
+node_modules/
+dist/
+.angular/
+.venv/
+__pycache__/
+.pytest_cache/
+*.blend1
