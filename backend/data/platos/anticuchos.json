@@ -1,0 +1,95 @@
+{
+  "id": "anticuchos",
+  "nombre": "Anticuchos",
+  "region": "Lima, comida de calle",
+  "resumen": "Brochetas de corazón de res marinado en ají panca, vinagre y comino, asadas a la parrilla y servidas con papa dorada, choclo y ají.",
+  "historia": "Los anticuchos son la comida de calle nocturna más conocida de Lima. Se cuenta que en los Andes ya se asaban trozos de carne ensartados antes de la llegada de los españoles, y que en la colonia la población afroperuana adaptó la receta con las vísceras que las casas principales descartaban, en especial el corazón de res, marinado con ají y vinagre. El nombre suele explicarse por el quechua, aunque su origen exacto no está claro. La figura de la anticuchera con su parrilla en la esquina es parte del paisaje limeño, y el plato está muy ligado a la procesión del Señor de los Milagros, en octubre. Se sirven con papa sancochada pasada por la parrilla, choclo y ají.",
+  "porciones": 4,
+  "ingredientes": [
+    {
+      "nombre": "Corazón de res",
+      "cantidad": "1 kg"
+    },
+    {
+      "nombre": "Ají panca molido",
+      "cantidad": "4 cucharadas"
+    },
+    {
+      "nombre": "Vinagre tinto",
+      "cantidad": "1/2 taza"
+    },
+    {
+      "nombre": "Ajo molido",
+      "cantidad": "2 cucharadas"
+    },
+    {
+      "nombre": "Comino molido",
+      "cantidad": "1 cucharadita"
+    },
+    {
+      "nombre": "Orégano seco",
+      "cantidad": "1 cucharadita"
+    },
+    {
+      "nombre": "Aceite vegetal",
+      "cantidad": "3 cucharadas"
+    },
+    {
+      "nombre": "Sal y pimienta",
+      "cantidad": "al gusto"
+    },
+    {
+      "nombre": "Palitos de caña",
+      "cantidad": "12 unidades"
+    },
+    {
+      "nombre": "Papa sancochada",
+      "cantidad": "4 unidades"
+    },
+    {
+      "nombre": "Choclo cocido",
+      "cantidad": "2 unidades"
+    },
+    {
+      "nombre": "Ají molido",
+      "cantidad": "para acompañar"
+    }
+  ],
+  "pasos": [
+    {
+      "numero": 1,
+      "titulo": "Limpiar y cortar el corazón",
+      "descripcion": "Retira la grasa, las venas y los nervios del corazón. Córtalo en trozos de unos tres centímetros de lado y un centímetro de grosor.",
+      "duracion_min": 20,
+      "modelo": "/modelos/anticuchos/paso-1.glb"
+    },
+    {
+      "numero": 2,
+      "titulo": "Marinar",
+      "descripcion": "Mezcla el ají panca, el vinagre, el ajo, el comino, el orégano, la sal y la pimienta. Cubre los trozos con la marinada y déjalos reposar en la refrigeradora al menos tres horas, mejor de un día para otro.",
+      "duracion_min": 180,
+      "modelo": "/modelos/anticuchos/paso-2.glb"
+    },
+    {
+      "numero": 3,
+      "titulo": "Ensartar",
+      "descripcion": "Remoja los palitos en agua para que no se quemen. Ensarta tres trozos de corazón en cada palito, bien extendidos. Guarda la marinada y mézclala con el aceite.",
+      "duracion_min": 15,
+      "modelo": "/modelos/anticuchos/paso-3.glb"
+    },
+    {
+      "numero": 4,
+      "titulo": "Asar a la parrilla",
+      "descripcion": "Asa los anticuchos sobre brasas muy calientes, de dos a tres minutos por lado, mojándolos con la marinada con una brocha. Deben quedar dorados por fuera y jugosos por dentro.",
+      "duracion_min": 8,
+      "modelo": "/modelos/anticuchos/paso-4.glb"
+    },
+    {
+      "numero": 5,
+      "titulo": "Servir",
+      "descripcion": "Dora en la misma parrilla las papas sancochadas cortadas en rodajas. Sirve dos anticuchos por persona con las papas, un trozo de choclo y ají al lado.",
+      "duracion_min": 5,
+      "modelo": "/modelos/anticuchos/paso-5.glb"
+    }
+  ]
+}

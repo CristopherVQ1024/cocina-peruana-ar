@@ -1,0 +1,95 @@
+{
+  "id": "lomo-saltado",
+  "nombre": "Lomo saltado",
+  "region": "Lima, cocina criolla y chifa",
+  "resumen": "Tiras de lomo salteadas a fuego fuerte con cebolla, tomate y ají amarillo, servidas con papas fritas y arroz blanco.",
+  "historia": "El lomo saltado es uno de los platos más pedidos de la cocina criolla. Se suele explicar como un encuentro entre la cocina peruana y la de los inmigrantes cantoneses que llegaron al Perú desde mediados del siglo XIX: de ellos vendrían el salteado rápido en wok a fuego muy alto y el uso del sillao, la salsa de soya. La carne, la cebolla, el tomate y el ají amarillo se saltean por tandas para que se doren sin soltar jugo, y al final se perfuman con vinagre y culantro. Se sirve con dos guarniciones a la vez, papas fritas y arroz blanco, una combinación que muchos consideran la marca del plato.",
+  "porciones": 4,
+  "ingredientes": [
+    {
+      "nombre": "Lomo fino de res",
+      "cantidad": "600 g"
+    },
+    {
+      "nombre": "Cebolla roja",
+      "cantidad": "2 unidades"
+    },
+    {
+      "nombre": "Tomate",
+      "cantidad": "3 unidades"
+    },
+    {
+      "nombre": "Ají amarillo",
+      "cantidad": "1 unidad"
+    },
+    {
+      "nombre": "Ajo molido",
+      "cantidad": "1 cucharada"
+    },
+    {
+      "nombre": "Sillao",
+      "cantidad": "3 cucharadas"
+    },
+    {
+      "nombre": "Vinagre tinto",
+      "cantidad": "2 cucharadas"
+    },
+    {
+      "nombre": "Culantro picado",
+      "cantidad": "2 cucharadas"
+    },
+    {
+      "nombre": "Papa blanca",
+      "cantidad": "4 unidades"
+    },
+    {
+      "nombre": "Aceite vegetal",
+      "cantidad": "para saltear y para freír"
+    },
+    {
+      "nombre": "Arroz blanco cocido",
+      "cantidad": "4 porciones"
+    },
+    {
+      "nombre": "Sal, pimienta y comino",
+      "cantidad": "al gusto"
+    }
+  ],
+  "pasos": [
+    {
+      "numero": 1,
+      "titulo": "Cortar los ingredientes",
+      "descripcion": "Corta el lomo en tiras de un dedo de grosor y sazónalo con sal, pimienta y comino. Corta la cebolla y el tomate en gajos gruesos, y el ají amarillo, sin venas ni semillas, en tiras.",
+      "duracion_min": 15,
+      "modelo": "/modelos/lomo-saltado/paso-1.glb"
+    },
+    {
+      "numero": 2,
+      "titulo": "Freír las papas",
+      "descripcion": "Pela las papas y córtalas en bastones. Fríelas en abundante aceite caliente hasta que estén doradas y escúrrelas sobre papel.",
+      "duracion_min": 15,
+      "modelo": "/modelos/lomo-saltado/paso-2.glb"
+    },
+    {
+      "numero": 3,
+      "titulo": "Saltear la carne",
+      "descripcion": "Calienta el wok o una sartén grande a fuego muy alto con un chorro de aceite. Saltea la carne por tandas, sin amontonarla, hasta que se dore por fuera, y resérvala.",
+      "duracion_min": 5,
+      "modelo": "/modelos/lomo-saltado/paso-3.glb"
+    },
+    {
+      "numero": 4,
+      "titulo": "Agregar las verduras y las salsas",
+      "descripcion": "En el mismo wok saltea el ajo, la cebolla y el ají durante un minuto. Devuelve la carne, añade el tomate, el sillao y el vinagre, y saltea un minuto más. La cebolla debe quedar crocante. Termina con el culantro picado.",
+      "duracion_min": 4,
+      "modelo": "/modelos/lomo-saltado/paso-4.glb"
+    },
+    {
+      "numero": 5,
+      "titulo": "Servir",
+      "descripcion": "Sirve el saltado de inmediato, con las papas fritas a un lado y una porción de arroz blanco.",
+      "duracion_min": 2,
+      "modelo": "/modelos/lomo-saltado/paso-5.glb"
+    }
+  ]
+}

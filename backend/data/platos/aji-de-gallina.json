@@ -1,0 +1,107 @@
+{
+  "id": "aji-de-gallina",
+  "nombre": "Ají de gallina",
+  "region": "Lima, cocina criolla",
+  "resumen": "Pollo deshilachado en una crema de ají amarillo, pan remojado en leche y pecanas, servido sobre papas con arroz blanco, huevo duro y aceituna.",
+  "historia": "El ají de gallina es un guiso cremoso y de picor suave, muy presente en la mesa familiar limeña. Una versión popular lo relaciona con el manjar blanco medieval que trajeron los españoles, una preparación de pechuga deshilachada con leche y almendras, que en el Perú se habría vuelto salada al sumarle ají amarillo. Se preparaba con gallina, de carne más firme y sabrosa, y hoy lo habitual es hacerlo con pechuga de pollo. La crema se espesa con pan remojado en leche o en el caldo, y lleva pecanas y queso parmesano. Se sirve sobre rodajas de papa amarilla, con arroz blanco, huevo duro y aceituna de botija.",
+  "porciones": 4,
+  "ingredientes": [
+    {
+      "nombre": "Pechuga de pollo o gallina",
+      "cantidad": "1 unidad grande (unos 600 g)"
+    },
+    {
+      "nombre": "Ají amarillo",
+      "cantidad": "4 unidades"
+    },
+    {
+      "nombre": "Pan de molde",
+      "cantidad": "4 rebanadas"
+    },
+    {
+      "nombre": "Leche evaporada",
+      "cantidad": "1 taza"
+    },
+    {
+      "nombre": "Cebolla roja picada",
+      "cantidad": "1 unidad"
+    },
+    {
+      "nombre": "Ajo molido",
+      "cantidad": "1 cucharada"
+    },
+    {
+      "nombre": "Pecanas picadas",
+      "cantidad": "50 g"
+    },
+    {
+      "nombre": "Queso parmesano rallado",
+      "cantidad": "3 cucharadas"
+    },
+    {
+      "nombre": "Caldo de la cocción",
+      "cantidad": "2 tazas"
+    },
+    {
+      "nombre": "Aceite vegetal",
+      "cantidad": "3 cucharadas"
+    },
+    {
+      "nombre": "Papa amarilla sancochada",
+      "cantidad": "4 unidades"
+    },
+    {
+      "nombre": "Huevo duro",
+      "cantidad": "2 unidades"
+    },
+    {
+      "nombre": "Aceituna de botija",
+      "cantidad": "4 unidades"
+    },
+    {
+      "nombre": "Arroz blanco cocido",
+      "cantidad": "4 porciones"
+    },
+    {
+      "nombre": "Sal y pimienta",
+      "cantidad": "al gusto"
+    }
+  ],
+  "pasos": [
+    {
+      "numero": 1,
+      "titulo": "Cocer y deshilachar el pollo",
+      "descripcion": "Hierve la pechuga en agua con sal hasta que esté cocida. Retírala, guarda el caldo y, cuando entibie, deshiláchala con las manos en hebras gruesas.",
+      "duracion_min": 30,
+      "modelo": "/modelos/aji-de-gallina/paso-1.glb"
+    },
+    {
+      "numero": 2,
+      "titulo": "Remojar el pan y licuar el ají",
+      "descripcion": "Quita la corteza al pan y remójalo en la leche. Retira las venas y las semillas de los ajíes y licúalos con un poco de caldo hasta tener una pasta. Pica las pecanas.",
+      "duracion_min": 10,
+      "modelo": "/modelos/aji-de-gallina/paso-2.glb"
+    },
+    {
+      "numero": 3,
+      "titulo": "Hacer el aderezo",
+      "descripcion": "Dora la cebolla y el ajo en el aceite a fuego medio. Añade la pasta de ají amarillo y cocina, moviendo, hasta que el aderezo se oscurezca un poco y el aceite se separe.",
+      "duracion_min": 10,
+      "modelo": "/modelos/aji-de-gallina/paso-3.glb"
+    },
+    {
+      "numero": 4,
+      "titulo": "Unir la crema con el pollo",
+      "descripcion": "Licúa el pan con la leche y agrégalo al aderezo junto con una taza de caldo. Cuando espese, incorpora el pollo, las pecanas y el queso parmesano. Ajusta la sal y aclara con más caldo si hace falta.",
+      "duracion_min": 10,
+      "modelo": "/modelos/aji-de-gallina/paso-4.glb"
+    },
+    {
+      "numero": 5,
+      "titulo": "Servir",
+      "descripcion": "Coloca rodajas de papa amarilla en el plato y cúbrelas con el ají de gallina. Acompaña con arroz blanco y decora con huevo duro y una aceituna.",
+      "duracion_min": 3,
+      "modelo": "/modelos/aji-de-gallina/paso-5.glb"
+    }
+  ]
+}

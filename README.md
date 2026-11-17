@@ -9,7 +9,7 @@ Propuesta del curso en [docs/propuesta.md](docs/propuesta.md).
 ```
 frontend/   Angular 22 con model-viewer, Tailwind y Spartan UI
 backend/    FastAPI, fichas de platos en data/platos/*.json y asistente con Gemini
-modelos/    scripts que generan los GLB de cada paso de los tres platos
+modelos/    scripts que generan los GLB de cada paso de los nueve platos
 docs/       propuesta y documentación del curso
 ```
 
@@ -59,15 +59,15 @@ cloudflared tunnel --url http://localhost:8090
 
 ## Modelos 3D
 
-Los modelos de los tres platos se generan por script con `trimesh`: perfiles de revolución para la vajilla, formas con ruido para los alimentos, color por vértice y normales suaves. Son 15 archivos, uno por paso, de entre 100 y 450 KB.
+Los modelos de los nueve platos se generan por script con `trimesh`: perfiles de revolución para la vajilla, formas con ruido para los alimentos, color por vértice y normales suaves. Son 45 archivos, uno por paso, de entre 100 y 800 KB.
 
 ```bash
-uv run modelos/generar.py           # los tres platos
+uv run modelos/generar.py           # los nueve platos
 uv run modelos/generar.py rocoto    # solo los platos cuyo id contenga ese texto
 ```
 
-- `modelos/base.py`: utilidades de geometría y color, y el menaje común (plato, tabla, bol, olla, sartén).
-- `modelos/causa.py`, `modelos/tacacho.py`, `modelos/rocoto.py`: una función por paso de cada plato.
+- `modelos/base.py`: utilidades de geometría y color, el menaje común (plato, tabla, bol, olla, sartén) y los alimentos que se repiten (papa, limón, ají, lechuga, choclo, arroz).
+- `modelos/causa.py`, `modelos/tacacho.py`, `modelos/rocoto.py`, `modelos/ceviche.py`, `modelos/huancaina.py`, `modelos/picarones.py`, `modelos/lomo.py`, `modelos/gallina.py`, `modelos/anticuchos.py`: una función por paso de cada plato.
 
 Todo se arma en metros, a tamaño real, con el centro en el origen y la base en y = 0.
 
@@ -85,5 +85,5 @@ Para un plato nuevo: crear `backend/data/platos/<id>.json` con la misma forma qu
 
 ## Pendientes
 
-- Verificar las tres fichas (historia y receta) con fuentes citables antes de la entrega. Los orígenes de los nombres y la leyenda del rocoto relleno están redactados como versiones populares, no como hechos.
+- Verificar las nueve fichas (historia y receta) con fuentes citables antes de la entrega. Los orígenes de los nombres y la leyenda del rocoto relleno están redactados como versiones populares, no como hechos.
 - Pruebas E2E con Playwright y prueba de uso en celulares Android reales.

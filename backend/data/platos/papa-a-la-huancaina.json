@@ -1,0 +1,59 @@
+{
+  "id": "papa-a-la-huancaina",
+  "nombre": "Papa a la huancaína",
+  "region": "Junín, sierra central",
+  "resumen": "Rodajas de papa sancochada bañadas en una salsa cremosa de ají amarillo y queso fresco, con huevo duro, aceituna y lechuga.",
+  "historia": "La papa a la huancaína es una entrada fría muy extendida en todo el Perú. Su nombre alude a Huancayo, en la sierra central. La versión popular más repetida cuenta que la vendían mujeres huancaínas a los obreros que construían el Ferrocarril Central, que une Lima con Huancayo, en el siglo XIX. Otra versión dice que el plato nació en Lima y tomó el nombre del tren. La receta antigua se molía en batán, un mortero de piedra, y usaba rocoto. Hoy la salsa se hace en licuadora con ají amarillo, queso fresco, leche evaporada y galletas de soda, que le dan cuerpo. Es habitual en reuniones familiares y suele acompañar a otros platos como el arroz con pollo o el ceviche.",
+  "porciones": 4,
+  "ingredientes": [
+    { "nombre": "Papa amarilla o blanca", "cantidad": "1 kg" },
+    { "nombre": "Ají amarillo fresco", "cantidad": "4 unidades" },
+    { "nombre": "Queso fresco", "cantidad": "250 g" },
+    { "nombre": "Leche evaporada", "cantidad": "3/4 de taza" },
+    { "nombre": "Galleta de soda", "cantidad": "4 unidades" },
+    { "nombre": "Cebolla roja", "cantidad": "1/2 unidad" },
+    { "nombre": "Ajo", "cantidad": "2 dientes" },
+    { "nombre": "Aceite vegetal", "cantidad": "1/4 de taza" },
+    { "nombre": "Huevo", "cantidad": "4 unidades" },
+    { "nombre": "Aceituna de botija", "cantidad": "8 unidades" },
+    { "nombre": "Lechuga", "cantidad": "8 hojas" },
+    { "nombre": "Sal", "cantidad": "al gusto" }
+  ],
+  "pasos": [
+    {
+      "numero": 1,
+      "titulo": "Sancochar las papas y los huevos",
+      "descripcion": "Hierve las papas con cáscara en agua con sal hasta que estén tiernas, unos 25 minutos. Sancocha los huevos 10 minutos. Deja enfriar, pela las papas y los huevos.",
+      "duracion_min": 30,
+      "modelo": "/modelos/papa-a-la-huancaina/paso-1.glb"
+    },
+    {
+      "numero": 2,
+      "titulo": "Soasar el ají",
+      "descripcion": "Quita las venas y las semillas a los ajíes amarillos. Dóralos ligeramente en una sartén con un poco de aceite junto con la cebolla en trozos y los ajos, para suavizar el picor y dar sabor.",
+      "duracion_min": 8,
+      "modelo": "/modelos/papa-a-la-huancaina/paso-2.glb"
+    },
+    {
+      "numero": 3,
+      "titulo": "Licuar la salsa",
+      "descripcion": "Licúa el ají, la cebolla y el ajo con el queso fresco, la leche evaporada, las galletas de soda y el resto del aceite, hasta tener una crema lisa y espesa. Prueba y ajusta la sal.",
+      "duracion_min": 5,
+      "modelo": "/modelos/papa-a-la-huancaina/paso-3.glb"
+    },
+    {
+      "numero": 4,
+      "titulo": "Armar el plato",
+      "descripcion": "Corta las papas en rodajas gruesas. Cubre el plato con hojas de lechuga y acomoda encima las rodajas, una apoyada sobre la otra.",
+      "duracion_min": 5,
+      "modelo": "/modelos/papa-a-la-huancaina/paso-4.glb"
+    },
+    {
+      "numero": 5,
+      "titulo": "Bañar y decorar",
+      "descripcion": "Baña las papas con abundante salsa huancaína. Decora con rodajas de huevo duro y aceitunas de botija, y sirve frío.",
+      "duracion_min": 3,
+      "modelo": "/modelos/papa-a-la-huancaina/paso-5.glb"
+    }
+  ]
+}

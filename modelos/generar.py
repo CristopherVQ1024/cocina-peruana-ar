@@ -11,12 +11,18 @@ Salida: frontend/public/modelos/<plato>/paso-N.glb
 
 import sys
 
+import anticuchos
 import causa
+import ceviche
+import gallina
+import huancaina
+import lomo
+import picarones
 import rocoto
 import tacacho
 from base import exportar
 
-PLATOS = [causa, tacacho, rocoto]
+PLATOS = [causa, tacacho, rocoto, ceviche, huancaina, picarones, lomo, gallina, anticuchos]
 
 
 def main():

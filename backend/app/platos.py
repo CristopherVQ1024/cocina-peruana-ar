@@ -6,7 +6,7 @@ from .config import get_settings
 from .esquemas import Plato, PlatoResumen
 
 
-ORDEN = ["causa-limena", "tacacho-con-cecina", "rocoto-relleno"]
+ORDEN = ["causa-limena", "tacacho-con-cecina", "rocoto-relleno", "ceviche", "papa-a-la-huancaina", "picarones", "lomo-saltado", "aji-de-gallina", "anticuchos"]
 
 
 def posicion(plato_id: str) -> tuple[int, str]:

@@ -1,0 +1,59 @@
+{
+  "id": "picarones",
+  "nombre": "Picarones",
+  "region": "Lima, postre criollo",
+  "resumen": "Anillos fritos de masa de zapallo y camote, crocantes por fuera y esponjosos por dentro, bañados en miel de chancaca.",
+  "historia": "Los picarones son uno de los postres callejeros más queridos del Perú. Se suele contar que nacieron en la Lima virreinal como una adaptación de los buñuelos españoles, a los que se sumaron el zapallo y el camote de la tierra. Su venta quedó ligada a las picaroneras, cocineras en su mayoría afroperuanas que los freían al paso en plazas y esquinas, una estampa que aparece en acuarelas y relatos costumbristas del siglo XIX. Hoy siguen presentes en ferias, carretillas y en la procesión del Señor de los Milagros, en octubre. Se sirven recién fritos, bañados en miel de chancaca, un jarabe de azúcar de caña sin refinar aromatizado con canela, clavo y cáscara de naranja.",
+  "porciones": 6,
+  "ingredientes": [
+    { "nombre": "Zapallo macre", "cantidad": "250 g" },
+    { "nombre": "Camote", "cantidad": "250 g" },
+    { "nombre": "Harina sin preparar", "cantidad": "500 g" },
+    { "nombre": "Levadura fresca", "cantidad": "20 g" },
+    { "nombre": "Azúcar", "cantidad": "2 cucharadas" },
+    { "nombre": "Anís en grano", "cantidad": "1 cucharada" },
+    { "nombre": "Sal", "cantidad": "1 pizca" },
+    { "nombre": "Aceite vegetal", "cantidad": "1 litro, para freír" },
+    { "nombre": "Chancaca", "cantidad": "1 tapa (unos 250 g)" },
+    { "nombre": "Canela", "cantidad": "2 ramas" },
+    { "nombre": "Clavo de olor", "cantidad": "4 unidades" },
+    { "nombre": "Cáscara de naranja", "cantidad": "1 tira" }
+  ],
+  "pasos": [
+    {
+      "numero": 1,
+      "titulo": "Cocer el zapallo y el camote",
+      "descripcion": "Pela y corta el zapallo y el camote en trozos. Hiérvelos con el anís hasta que estén muy suaves. Escúrrelos, guarda una taza del agua de cocción y haz un puré.",
+      "duracion_min": 25,
+      "modelo": "/modelos/picarones/paso-1.glb"
+    },
+    {
+      "numero": 2,
+      "titulo": "Preparar la masa",
+      "descripcion": "Disuelve la levadura con el azúcar en un poco del agua de cocción tibia. Mezcla con el puré, la sal y la harina, y bate con la mano hasta tener una masa elástica y pegajosa. Tapa y deja reposar una hora, hasta que doble su volumen.",
+      "duracion_min": 75,
+      "modelo": "/modelos/picarones/paso-2.glb"
+    },
+    {
+      "numero": 3,
+      "titulo": "Formar y freír",
+      "descripcion": "Calienta el aceite. Con los dedos mojados en agua con sal toma una porción de masa, ábrele un hueco al centro y déjala caer al aceite. Voltea los anillos con un palito hasta que estén dorados por ambos lados.",
+      "duracion_min": 20,
+      "modelo": "/modelos/picarones/paso-3.glb"
+    },
+    {
+      "numero": 4,
+      "titulo": "Preparar la miel de chancaca",
+      "descripcion": "Hierve la chancaca con dos tazas de agua, la canela, el clavo de olor y la cáscara de naranja. Cocina a fuego bajo hasta que tome punto de jarabe ligero y cuélala.",
+      "duracion_min": 20,
+      "modelo": "/modelos/picarones/paso-4.glb"
+    },
+    {
+      "numero": 5,
+      "titulo": "Servir",
+      "descripcion": "Escurre los picarones y sírvelos calientes, de tres a cuatro por porción, bañados con la miel de chancaca tibia.",
+      "duracion_min": 2,
+      "modelo": "/modelos/picarones/paso-5.glb"
+    }
+  ]
+}

@@ -45,6 +45,22 @@ CLARA = Material((0.97, 0.97, 0.94), 0.4)
 YEMA = Material((0.96, 0.70, 0.12), 0.55)
 ACEITUNA = Material((0.20, 0.09, 0.15), 0.22)
 TALLO = Material((0.30, 0.45, 0.15), 0.7)
+PAPA = Material((0.82, 0.64, 0.32), 0.8)
+PAPA_OJO = (0.55, 0.38, 0.18)
+LIMON = Material((0.36, 0.58, 0.14), 0.45)
+PULPA = Material((0.80, 0.87, 0.45), 0.3)
+PULPA_GAJO = (0.93, 0.95, 0.78)
+AJI = Material((0.96, 0.56, 0.08), 0.28)
+LECHUGA = Material((0.47, 0.70, 0.24), 0.6)
+LECHUGA_NERVIO = (0.82, 0.90, 0.62)
+LECHUGA_BORDE = (0.25, 0.50, 0.14)
+CAMOTE = Material((0.93, 0.50, 0.13), 0.6)
+CAMOTE_PIEL = (0.58, 0.27, 0.24)
+CHOCLO = Material((0.98, 0.90, 0.58), 0.4)
+CHOCLO_SURCO = (0.86, 0.70, 0.30)
+ARROZ = Material((0.97, 0.96, 0.91), 0.75)
+ARROZ_SOMBRA = (0.87, 0.84, 0.74)
+CUCHARA = Material((0.72, 0.54, 0.34), 0.7)
 
 
 # color y materiales
@@ -121,6 +137,13 @@ def girar(piezas, angulo, eje=(0, 0, 1), centro=(0, 0, 0)):
     for pieza in piezas if isinstance(piezas, list) else [piezas]:
         pieza.apply_transform(rotation_matrix(angulo, eje, centro))
     return piezas
+
+
+def apoyar(piezas, z=0.0):
+    # sube o baja el conjunto hasta que su punto mas bajo quede en z
+    lista = piezas if isinstance(piezas, list) else [piezas]
+    minimo = min(pieza.bounds[0][2] for pieza in lista)
+    return mover(piezas, z=z - minimo)
 
 
 # geometria
@@ -342,6 +365,12 @@ def bol(radio=0.08, alto=0.055, grosor=0.004, material=LOZA):
     return [pintar(torno(redondear(perfil, 0.002), 64), material)]
 
 
+def radio_bol(radio, alto, grosor, z):
+    # radio interior de un bol de base a la altura z
+    s = np.clip(z / alto, 0, 1)
+    return radio * (0.5 + 0.5 * np.sqrt(1 - (1 - s) ** 2)) - grosor
+
+
 def olla(radio=0.085, alto=0.09):
     grosor = 0.003
     perfil = [
@@ -388,6 +417,22 @@ def sarten(radio=0.12):
     return [cuerpo, mango]
 
 
+def cuchara_palo():
+    recorrido = curva([(0, 0, 0), (0.09, 0, 0.012), (0.19, 0, 0.03)], 14)
+    mango = tubo(recorrido, 0.0055, lados=10, ancho=1.3)
+    pala = organico((0.03, 0.019, 0.005), 0, 0.01, 0, 3)
+    return [pintar(mango, CUCHARA), pintar(mover(pala, x=-0.022), CUCHARA)]
+
+
+def cuchillo(x, y, z, angulo=0.0):
+    hoja = extruir([(0, 0), (0.115, 0), (0.145, 0.012), (0.152, 0.027), (0, 0.027)], 0.0022, bisel=0.0007)
+    recorrido = np.column_stack([np.linspace(-0.105, 0.004, 12), np.full(12, 0.016), np.full(12, 0.0065)])
+    mango = tubo(recorrido, husillo(12, 0.0065, 0.12, 0.05), lados=12, ancho=1.9)
+    piezas = [pintar(hoja, ALUMINIO), pintar(mango, MANGO)]
+    girar(piezas, angulo)
+    return mover(piezas, x, y, z)
+
+
 def rodaja_huevo(x=0.0, y=0.0, z=0.0, angulo=0.0, inclinacion=0.0):
     clara = disco(0.015, 0.004, bisel=0.0012, secciones=40)
     clara.apply_scale([1.15, 1.0, 1.0])
@@ -402,6 +447,96 @@ def aceituna(x=0.0, y=0.0, z=0.0, angulo=0.0):
     malla = organico((0.012, 0.009, 0.009), 0.0004, 0.01, 2)
     girar(malla, angulo)
     return [pintar(mover(malla, x, y, z + 0.009), ACEITUNA)]
+
+
+# alimentos comunes
+
+def papa(rng, x, y, z, escala=1.0):
+    semilla = int(rng.integers(1000))
+    malla = organico(np.array([0.036, 0.026, 0.022]) * escala, 0.003, 0.035, semilla)
+    colores = motas(malla, PAPA.color, PAPA_OJO, 0.011, 0.5, semilla + 1)
+    colores = mezcla(colores, PAPA_OJO, escalon(ruido(malla.vertices, 0.05, semilla + 2), 0.2, 1.0) * 0.35)
+    girar(malla, rng.uniform(0, np.pi))
+    return pintar(mover(malla, x, y, z + 0.022 * escala), PAPA, colores)
+
+
+def medio_limon(x, y, z, angulo=0.0):
+    radio = 0.021
+    arco = [(radio * np.sin(a), radio * 0.85 * (1 - np.cos(a))) for a in np.linspace(0, np.pi / 2, 9)]
+    alto = arco[-1][1]
+    cascara = torno(arco + [(0, alto)], 40)
+    pulpa = disco(radio - 0.002, 0.0012, alto - 0.0004, bisel=0.0004, paso=0.002, secciones=48)
+    giro = np.arctan2(pulpa.vertices[:, 1], pulpa.vertices[:, 0])
+    distancia = np.linalg.norm(pulpa.vertices[:, :2], axis=1) / (radio - 0.002)
+    gajos = np.abs(np.sin(giro * 4)) ** 0.25
+    colores = mezcla(PULPA_GAJO, PULPA.color, gajos * escalon(distancia, 0.1, 0.25))
+    colores = mezcla(colores, PULPA_GAJO, escalon(distancia, 0.86, 0.95))
+    piezas = [pintar(cascara, LIMON), pintar(pulpa, PULPA, colores)]
+    girar(piezas, angulo)
+    return mover(piezas, x, y, z)
+
+
+def aji(x, y, z, angulo=0.0, material=AJI, escala=1.0):
+    recorrido = curva([(-0.055, 0, 0), (-0.02, 0.005, 0), (0.02, 0.003, 0), (0.058, -0.008, 0)], 28)
+    t = np.linspace(0, 1, 28)
+    radios = 0.0135 * np.sqrt(np.clip(t / 0.07, 0, 1)) * (1 - t) ** 0.65 + 0.0008
+    cuerpo = tubo(recorrido, radios, lados=18)
+    cabo = tubo(curva([(-0.054, 0, 0.002), (-0.064, 0, 0.006), (-0.072, 0.002, 0.014)], 8), 0.0026, lados=8)
+    piezas = [pintar(cuerpo, material), pintar(cabo, TALLO)]
+    if escala != 1.0:
+        for pieza in piezas:
+            pieza.apply_scale(escala)
+    girar(piezas, angulo)
+    return mover(piezas, x, y, z + 0.0135 * escala)
+
+
+def hojas_picadas(rng, x, y, z, material, cantidad=7, radio=0.007):
+    hojas = []
+    for _ in range(cantidad):
+        hoja = organico((0.0065, 0.004, 0.0007), 0.0006, 0.004, int(rng.integers(100)), 2)
+        girar(hoja, rng.uniform(-0.5, 0.5), (1, 0, 0))
+        girar(hoja, rng.uniform(0, 2 * np.pi))
+        mover(hoja, x + rng.uniform(-radio, radio), y + rng.uniform(-radio, radio), z + rng.uniform(0.001, 0.004))
+        hojas.append(pintar(hoja, material))
+    return hojas
+
+
+def hoja_lechuga(x, y, z, angulo=0.0, largo=0.07, semilla=0):
+    ancho = largo * 0.72
+    malla = organico((largo, ancho, 0.0012), subdivisiones=4)
+    v = np.array(malla.vertices)
+    distancia = np.hypot(v[:, 0] / largo, v[:, 1] / ancho)
+    giro = np.arctan2(v[:, 1], v[:, 0])
+    rizo = 0.004 * np.sin(giro * 9 + semilla) + 0.002 * ruido(v, 0.02, semilla)
+    v[:, 2] += distancia**2 * (0.014 + rizo)
+    malla.vertices = v
+    colores = mezcla(LECHUGA.color, LECHUGA_NERVIO, (1 - escalon(np.abs(v[:, 1]), 0.002, 0.008)) * 0.8)
+    colores = mezcla(colores, LECHUGA_BORDE, escalon(distancia, 0.55, 1.0) * 0.6)
+    girar(malla, angulo)
+    return [pintar(mover(malla, x, y, z + 0.0012), LECHUGA, colores)]
+
+
+def trozo_choclo(x, y, z, angulo=0.0, radio=0.021, alto=0.036):
+    malla = disco(radio, alto, bisel=0.002, paso=0.0013, secciones=84)
+    v = np.array(malla.vertices)
+    distancia = np.hypot(v[:, 0], v[:, 1])
+    giro = np.arctan2(v[:, 1], v[:, 0])
+    costado = escalon(distancia, radio * 0.9, radio * 0.99)
+    grano = (np.abs(np.sin(giro * 7)) * np.abs(np.sin(v[:, 2] / 0.0052 * np.pi))) ** 0.5
+    empuje = costado * (grano - 0.5) * 0.0028
+    v[:, 0] += np.cos(giro) * empuje
+    v[:, 1] += np.sin(giro) * empuje
+    malla.vertices = v
+    colores = mezcla(CHOCLO_SURCO, CHOCLO.color, np.where(costado > 0.5, grano, 0.55))
+    girar(malla, angulo)
+    return [pintar(mover(malla, x, y, z), CHOCLO, colores)]
+
+
+def timbal_arroz(x, y, z, radio=0.045, alto=0.034, semilla=0):
+    perfil = redondear([(0, 0), (radio, 0), (radio * 0.9, alto), (0, alto)], 0.008)
+    malla = relieve(torno(perfil, 96, paso=0.002), 0.0007, 0.0035, semilla)
+    colores = motas(malla, ARROZ.color, ARROZ_SOMBRA, 0.0035, 0.2, semilla + 1)
+    return [pintar(mover(malla, x, y, z), ARROZ, colores)]
 
 
 # salida

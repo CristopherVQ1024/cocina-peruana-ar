@@ -7,7 +7,7 @@ from app.asistente import get_asistente
 from app.esquemas import RespuestaAsistente
 from app.main import app
 
-PLATOS = ["causa-limena", "tacacho-con-cecina", "rocoto-relleno"]
+PLATOS = ["causa-limena", "tacacho-con-cecina", "rocoto-relleno", "ceviche", "papa-a-la-huancaina", "picarones", "lomo-saltado", "aji-de-gallina", "anticuchos"]
 MODELOS = Path(__file__).resolve().parents[2] / "frontend/public/modelos"
 
 
@@ -43,7 +43,7 @@ def test_lista_platos(cliente):
     assert causa["modelo"].endswith("paso-5.glb")
 
 
-def test_lista_los_tres_platos_en_orden(cliente):
+def test_lista_los_platos_en_orden(cliente):
     ids = [p["id"] for p in cliente.get("/api/platos").json()]
     assert ids == PLATOS
 

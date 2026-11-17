@@ -1,0 +1,57 @@
+{
+  "id": "ceviche",
+  "nombre": "Ceviche de pescado",
+  "region": "Costa del Perú",
+  "resumen": "Pescado fresco en cubos, curado al momento con jugo de limón, ají limo, cebolla roja y culantro, servido con camote, choclo y cancha.",
+  "historia": "El ceviche es el plato bandera de la costa peruana. Se prepara con pescado muy fresco que se cura en pocos minutos con el jugo ácido del limón sutil, y el jugo que queda en el fondo se conoce como leche de tigre. Fue declarado Patrimonio Cultural de la Nación en 2004 y cada 28 de junio se celebra en el Perú el Día Nacional del Ceviche. En 2023 la UNESCO inscribió las prácticas y significados asociados a su preparación y consumo en la Lista Representativa del Patrimonio Cultural Inmaterial de la Humanidad. Sobre el origen del nombre circulan varias versiones populares: una lo relaciona con la palabra quechua siwichi y otra con el escabeche de raíz árabe que trajeron los españoles. Tradicionalmente se come al mediodía, recién hecho, acompañado de camote sancochado, choclo y cancha serrana.",
+  "porciones": 4,
+  "ingredientes": [
+    { "nombre": "Filete de pescado blanco fresco (corvina o lenguado)", "cantidad": "600 g" },
+    { "nombre": "Limón sutil", "cantidad": "15 unidades" },
+    { "nombre": "Cebolla roja", "cantidad": "1 unidad grande" },
+    { "nombre": "Ají limo", "cantidad": "1 unidad" },
+    { "nombre": "Culantro picado", "cantidad": "2 cucharadas" },
+    { "nombre": "Sal", "cantidad": "al gusto" },
+    { "nombre": "Camote sancochado", "cantidad": "2 unidades" },
+    { "nombre": "Choclo sancochado", "cantidad": "1 unidad" },
+    { "nombre": "Cancha serrana", "cantidad": "1 taza" },
+    { "nombre": "Lechuga", "cantidad": "4 hojas" }
+  ],
+  "pasos": [
+    {
+      "numero": 1,
+      "titulo": "Cortar el pescado",
+      "descripcion": "Retira la piel y las espinas del filete. Córtalo en cubos de unos 2 cm con un cuchillo bien afilado y mantenlo frío hasta el momento de mezclar.",
+      "duracion_min": 10,
+      "modelo": "/modelos/ceviche/paso-1.glb"
+    },
+    {
+      "numero": 2,
+      "titulo": "Picar la cebolla, el ají y el culantro",
+      "descripcion": "Corta la cebolla roja en pluma, es decir, en tiras finas a lo largo, y lávala con agua fría para suavizarla. Pica el ají limo sin venas ni semillas y pica el culantro.",
+      "duracion_min": 10,
+      "modelo": "/modelos/ceviche/paso-2.glb"
+    },
+    {
+      "numero": 3,
+      "titulo": "Exprimir los limones",
+      "descripcion": "Parte los limones por la mitad y exprímelos sobre un bol, sin apretar hasta el final para que el jugo no amargue. Hazlo justo antes de preparar el ceviche.",
+      "duracion_min": 5,
+      "modelo": "/modelos/ceviche/paso-3.glb"
+    },
+    {
+      "numero": 4,
+      "titulo": "Mezclar y curar",
+      "descripcion": "Pon el pescado en un bol frío, sazona con sal y mezcla con el ají limo y el culantro. Vierte el jugo de limón, agrega la cebolla y remueve. Deja reposar de 3 a 5 minutos, hasta que el pescado se ponga blanco por fuera.",
+      "duracion_min": 5,
+      "modelo": "/modelos/ceviche/paso-4.glb"
+    },
+    {
+      "numero": 5,
+      "titulo": "Servir",
+      "descripcion": "Sirve de inmediato sobre una hoja de lechuga, con la cebolla encima y un poco de leche de tigre. Acompaña con rodajas de camote, un trozo de choclo y cancha serrana.",
+      "duracion_min": 5,
+      "modelo": "/modelos/ceviche/paso-5.glb"
+    }
+  ]
+}

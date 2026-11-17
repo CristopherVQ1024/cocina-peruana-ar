@@ -9,12 +9,12 @@ from base import (
     TALLO,
     Material,
     agua,
+    cuchara_palo,
     curva,
     disco,
     escalon,
     extruir,
     girar,
-    husillo,
     mezcla,
     motas,
     mover,
@@ -44,7 +44,6 @@ QUESO = Material((0.97, 0.90, 0.64), 0.45)
 QUESO_DORADO = (0.76, 0.47, 0.15)
 BATIDO = Material((0.97, 0.91, 0.70), 0.2)
 FUENTE = Material((0.74, 0.40, 0.24), 0.45)
-CUCHARA = Material((0.72, 0.54, 0.34), 0.7)
 PASTEL = Material((0.95, 0.87, 0.62), 0.7)
 PASTEL_CAPA = (0.84, 0.70, 0.40)
 
@@ -136,13 +135,6 @@ def fuente(radio=0.12, alto=0.045):
         (0, grosor),
     ]
     return [pintar(torno(redondear(perfil, 0.005), 96), FUENTE)]
-
-
-def cuchara_palo():
-    recorrido = curva([(0, 0, 0), (0.09, 0, 0.012), (0.19, 0, 0.03)], 14)
-    mango = tubo(recorrido, 0.0055, lados=10, ancho=1.3)
-    pala = organico((0.03, 0.019, 0.005), 0, 0.01, 0, 3)
-    return [pintar(mango, CUCHARA), pintar(mover(pala, x=-0.022), CUCHARA)]
 
 
 def pastel_papa(x, y, z, angulo=0.0):
