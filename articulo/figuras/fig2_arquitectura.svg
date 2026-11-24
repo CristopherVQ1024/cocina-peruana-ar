@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="640" viewBox="0 0 1400 640" font-family="Liberation Sans, Arial, sans-serif">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#222"/>
+    </marker>
+    <marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9a3412"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="640" fill="#fff"/>
+
+  <!-- zonas -->
+  <rect x="20" y="40" width="330" height="560" rx="12" fill="#fafafa" stroke="#bbb" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="185" y="30" font-size="18" fill="#555" text-anchor="middle">Celular o navegador</text>
+  <rect x="420" y="40" width="600" height="400" rx="12" fill="#fafafa" stroke="#bbb" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="720" y="30" font-size="18" fill="#555" text-anchor="middle">Docker Compose (servidor con HTTPS)</text>
+  <rect x="1090" y="40" width="290" height="200" rx="12" fill="#fafafa" stroke="#bbb" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="1235" y="30" font-size="18" fill="#555" text-anchor="middle">Servicio externo</text>
+
+  <!-- cliente -->
+  <g stroke="#222" stroke-width="2">
+    <rect x="45" y="70" width="280" height="150" rx="10" fill="#fdf1e7"/>
+    <rect x="45" y="260" width="280" height="110" rx="10" fill="#fff"/>
+    <rect x="45" y="420" width="280" height="150" rx="10" fill="#fff"/>
+  </g>
+  <g fill="#222" text-anchor="middle">
+    <text x="185" y="105" font-size="21" font-weight="bold">Interfaz Angular 22</text>
+    <text x="185" y="133" font-size="16" fill="#444">inicio, página del plato</text>
+    <text x="185" y="155" font-size="16" fill="#444">con pasos y chat (@defer)</text>
+    <text x="185" y="177" font-size="16" fill="#444">es, en, pt, fr</text>
+    <text x="185" y="200" font-size="16" fill="#444">Spartan UI y Tailwind</text>
+    <text x="185" y="300" font-size="21" font-weight="bold">model-viewer</text>
+    <text x="185" y="328" font-size="16" fill="#444">visor 3D con WebGL</text>
+    <text x="185" y="350" font-size="16" fill="#444">cambia el src por paso</text>
+    <text x="185" y="458" font-size="21" font-weight="bold">Scene Viewer</text>
+    <text x="185" y="486" font-size="16" fill="#444">app de Google con ARCore</text>
+    <text x="185" y="508" font-size="16" fill="#444">ar-scale="fixed":</text>
+    <text x="185" y="530" font-size="16" fill="#444">plato a tamaño real</text>
+    <text x="185" y="552" font-size="16" fill="#444">solo en Android</text>
+  </g>
+
+  <!-- servidor -->
+  <g stroke="#222" stroke-width="2">
+    <rect x="450" y="80" width="250" height="150" rx="10" fill="#fff"/>
+    <rect x="740" y="80" width="250" height="150" rx="10" fill="#fdf1e7"/>
+    <rect x="450" y="280" width="250" height="130" rx="10" fill="#fff"/>
+    <rect x="740" y="280" width="250" height="130" rx="10" fill="#fff"/>
+  </g>
+  <g fill="#222" text-anchor="middle">
+    <text x="575" y="115" font-size="21" font-weight="bold">Nginx (web)</text>
+    <text x="575" y="143" font-size="16" fill="#444">sirve Angular compilado</text>
+    <text x="575" y="165" font-size="16" fill="#444">sirve GLB como</text>
+    <text x="575" y="187" font-size="16" fill="#444">model/gltf-binary</text>
+    <text x="575" y="209" font-size="16" fill="#444">reenvía /api</text>
+    <text x="865" y="115" font-size="21" font-weight="bold">FastAPI (backend)</text>
+    <text x="865" y="143" font-size="16" fill="#444">GET /api/platos</text>
+    <text x="865" y="165" font-size="16" fill="#444">GET /api/platos/{id}?idioma</text>
+    <text x="865" y="187" font-size="16" fill="#444">POST /api/asistente</text>
+    <text x="865" y="209" font-size="16" fill="#444">Pydantic valida todo</text>
+    <text x="575" y="318" font-size="21" font-weight="bold">45 modelos GLB</text>
+    <text x="575" y="346" font-size="16" fill="#444">modelos/&lt;plato&gt;/paso-N.glb</text>
+    <text x="575" y="368" font-size="16" fill="#444">generados por script</text>
+    <text x="575" y="390" font-size="16" fill="#444">(trimesh, numpy)</text>
+    <text x="865" y="318" font-size="21" font-weight="bold">9 fichas JSON</text>
+    <text x="865" y="346" font-size="16" fill="#444">región, historia,</text>
+    <text x="865" y="368" font-size="16" fill="#444">ingredientes y pasos</text>
+    <text x="865" y="390" font-size="16" fill="#444">caché de traducciones</text>
+  </g>
+
+  <!-- externo -->
+  <rect x="1115" y="80" width="240" height="130" rx="10" fill="#fff" stroke="#222" stroke-width="2"/>
+  <g fill="#222" text-anchor="middle">
+    <text x="1235" y="118" font-size="21" font-weight="bold">API de Gemini</text>
+    <text x="1235" y="146" font-size="16" fill="#444">gemini-3.5-flash</text>
+    <text x="1235" y="168" font-size="16" fill="#444">salida JSON con esquema</text>
+    <text x="1235" y="190" font-size="16" fill="#444">clave solo en .env</text>
+  </g>
+
+  <!-- CI -->
+  <rect x="450" y="480" width="540" height="100" rx="10" fill="#fff" stroke="#222" stroke-width="2"/>
+  <g fill="#222" text-anchor="middle">
+    <text x="720" y="518" font-size="21" font-weight="bold">GitHub Actions (cada push a main)</text>
+    <text x="720" y="548" font-size="16" fill="#444">pytest · ng build · docker compose build</text>
+  </g>
+
+  <!-- flechas -->
+  <g stroke="#222" stroke-width="2.2" fill="none" marker-end="url(#f)">
+    <line x1="325" y1="120" x2="446" y2="120"/>
+    <line x1="700" y1="150" x2="736" y2="150"/>
+    <line x1="990" y1="130" x2="1111" y2="130"/>
+    <line x1="865" y1="230" x2="865" y2="276"/>
+    <line x1="575" y1="280" x2="575" y2="234"/>
+    <path d="M450,190 L380,190 L380,315 L329,315"/>
+  </g>
+  <path d="M575,410 L575,450 L380,450 L380,495 L329,495" fill="none" stroke="#9a3412" stroke-width="2.4" stroke-dasharray="9 6" marker-end="url(#fr)"/>
+  <line x1="185" y1="370" x2="185" y2="416" stroke="#222" stroke-width="2.2" marker-end="url(#f)"/>
+
+  <!-- números -->
+  <g font-size="17" font-weight="bold" fill="#fff">
+    <circle cx="385" cy="104" r="14" fill="#222"/><text x="385" y="110" text-anchor="middle">1</text>
+    <circle cx="718" y="0" cy="134" r="14" fill="#222"/><text x="718" y="140" text-anchor="middle">2</text>
+    <circle cx="1050" cy="114" r="14" fill="#222"/><text x="1050" y="120" text-anchor="middle">3</text>
+    <circle cx="890" cy="253" r="14" fill="#222"/><text x="890" y="259" text-anchor="middle">4</text>
+    <circle cx="355" cy="298" r="14" fill="#222"/><text x="355" y="304" text-anchor="middle">5</text>
+    <circle cx="160" cy="393" r="14" fill="#222"/><text x="160" y="399" text-anchor="middle">6</text>
+    <circle cx="478" cy="450" r="14" fill="#9a3412"/><text x="478" y="456" text-anchor="middle">7</text>
+  </g>
+  <g font-size="15" fill="#333">
+    <text x="1060" y="300">1 Pide la página, la ficha o una respuesta</text>
+    <text x="1060" y="324">2 Nginx reenvía /api al backend</text>
+    <text x="1060" y="348">3 Ficha + pregunta al modelo</text>
+    <text x="1060" y="372">4 Lee la ficha del plato</text>
+    <text x="1060" y="396">5 El visor descarga el GLB del paso</text>
+    <text x="1060" y="420">6 «Ver en tu mesa» abre la AR</text>
+    <text x="1060" y="444" fill="#9a3412">7 Scene Viewer descarga el GLB</text>
+    <text x="1060" y="466" fill="#9a3412">   por su cuenta, solo con HTTPS</text>
+  </g>
+</svg>

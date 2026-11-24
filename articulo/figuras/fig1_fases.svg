@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="430" viewBox="0 0 1400 430" font-family="Liberation Sans, Arial, sans-serif">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#222"/>
+    </marker>
+    <marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9a3412"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="430" fill="#fff"/>
+
+  <g stroke="#222" stroke-width="2">
+    <rect x="20" y="40" width="240" height="70" rx="10" fill="#fdf1e7"/>
+    <rect x="300" y="40" width="240" height="70" rx="10" fill="#fdf1e7"/>
+    <rect x="580" y="40" width="240" height="70" rx="10" fill="#fdf1e7"/>
+    <rect x="860" y="40" width="240" height="70" rx="10" fill="#fdf1e7"/>
+    <rect x="1140" y="40" width="240" height="70" rx="10" fill="#fdf1e7"/>
+  </g>
+  <g font-size="22" font-weight="bold" fill="#222" text-anchor="middle">
+    <text x="140" y="83">1. Análisis</text>
+    <text x="420" y="83">2. Diseño</text>
+    <text x="700" y="83">3. Desarrollo</text>
+    <text x="980" y="83">4. Implementación</text>
+    <text x="1260" y="83">5. Evaluación</text>
+  </g>
+  <g stroke="#222" stroke-width="2.2" marker-end="url(#f)">
+    <line x1="260" y1="75" x2="296" y2="75"/>
+    <line x1="540" y1="75" x2="576" y2="75"/>
+    <line x1="820" y1="75" x2="856" y2="75"/>
+    <line x1="1100" y1="75" x2="1136" y2="75"/>
+  </g>
+
+  <g stroke="#bbb" stroke-width="1.5" fill="#fafafa">
+    <rect x="20" y="125" width="240" height="170" rx="8"/>
+    <rect x="300" y="125" width="240" height="170" rx="8"/>
+    <rect x="580" y="125" width="240" height="170" rx="8"/>
+    <rect x="860" y="125" width="240" height="170" rx="8"/>
+    <rect x="1140" y="125" width="240" height="170" rx="8"/>
+  </g>
+  <g font-size="17" fill="#333">
+    <text x="36" y="158">Usuario: turista y</text>
+    <text x="36" y="180">estudiante</text>
+    <text x="36" y="208">Selección de platos</text>
+    <text x="36" y="230">por región</text>
+    <text x="36" y="258">Requerimientos y</text>
+    <text x="36" y="280">celulares con ARCore</text>
+
+    <text x="316" y="158">Arquitectura web</text>
+    <text x="316" y="186">Ficha JSON del plato</text>
+    <text x="316" y="214">Un GLB por paso,</text>
+    <text x="316" y="236">en metros</text>
+    <text x="316" y="264">Prompt y esquema</text>
+    <text x="316" y="286">de respuesta</text>
+
+    <text x="596" y="158">Modelos 3D por</text>
+    <text x="596" y="180">script (trimesh)</text>
+    <text x="596" y="208">Angular 22 con</text>
+    <text x="596" y="230">model-viewer</text>
+    <text x="596" y="258">FastAPI y Gemini</text>
+    <text x="596" y="286">con salida JSON</text>
+
+    <text x="876" y="158">Docker Compose</text>
+    <text x="876" y="180">con Nginx</text>
+    <text x="876" y="208">GitHub Actions</text>
+    <text x="876" y="236">Túnel HTTPS para</text>
+    <text x="876" y="258">probar AR en el</text>
+    <text x="876" y="280">celular</text>
+
+    <text x="1156" y="158">Pruebas de la API</text>
+    <text x="1156" y="186">gltf-validator</text>
+    <text x="1156" y="214">Playwright a 1440</text>
+    <text x="1156" y="236">y 390 px</text>
+    <text x="1156" y="264">AR en celulares y</text>
+    <text x="1156" y="286">prueba del asistente</text>
+  </g>
+
+  <path d="M1260,295 L1260,345 L140,345 L140,299" fill="none" stroke="#9a3412" stroke-width="2.4" stroke-dasharray="9 6" marker-end="url(#fr)"/>
+  <text x="700" y="375" font-size="18" fill="#9a3412" text-anchor="middle">Lo aprendido al evaluar vuelve al análisis del ciclo siguiente</text>
+  <text x="700" y="405" font-size="18" fill="#333" text-anchor="middle">Ciclo 1: causa limeña · Ciclo 2: tacacho con cecina y rocoto relleno · Ciclo 3: seis platos más</text>
+</svg>

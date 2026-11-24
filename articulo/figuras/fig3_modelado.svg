@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420" font-family="Liberation Sans, Arial, sans-serif">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="420" fill="#fff"/>
+
+  <g stroke="#222" stroke-width="2" fill="#fff">
+    <rect x="20" y="40" width="250" height="330" rx="10"/>
+    <rect x="300" y="40" width="250" height="330" rx="10" fill="#fdf1e7"/>
+    <rect x="580" y="40" width="250" height="330" rx="10"/>
+    <rect x="860" y="40" width="250" height="330" rx="10"/>
+    <rect x="1140" y="40" width="240" height="330" rx="10" fill="#fdf1e7"/>
+  </g>
+  <g stroke="#222" stroke-width="2.2" marker-end="url(#f)">
+    <line x1="270" y1="205" x2="296" y2="205"/>
+    <line x1="550" y1="205" x2="576" y2="205"/>
+    <line x1="830" y1="205" x2="856" y2="205"/>
+    <line x1="1110" y1="205" x2="1136" y2="205"/>
+  </g>
+
+  <g fill="#222" text-anchor="middle" font-weight="bold" font-size="20">
+    <text x="145" y="75">Función por paso</text>
+    <text x="425" y="75">Primitivas</text>
+    <text x="705" y="75">Color y material</text>
+    <text x="985" y="75">Escena del paso</text>
+    <text x="1260" y="75">Exportación</text>
+  </g>
+  <g font-size="16" fill="#333">
+    <text x="36" y="110">causa.py, ceviche.py…</text>
+    <text x="36" y="134">paso_1() … paso_5()</text>
+    <text x="36" y="166">Piezas comunes en</text>
+    <text x="36" y="188">base.py: plato, bol,</text>
+    <text x="36" y="210">olla, tabla, papa,</text>
+    <text x="36" y="232">limón, choclo, arroz</text>
+    <text x="36" y="264">Azar con semilla fija</text>
+    <text x="36" y="286">por plato (rng)</text>
+    <text x="36" y="318">Medidas en metros:</text>
+    <text x="36" y="340">plato de 26 cm</text>
+
+    <text x="316" y="110">Revolución de un perfil</text>
+    <text x="316" y="132">biselado (1): vajilla,</text>
+    <text x="316" y="154">rocoto, aro</text>
+    <text x="316" y="186">Esfera deformada con</text>
+    <text x="316" y="208">ruido (2): papa, bolas</text>
+    <text x="316" y="230">de tacacho</text>
+    <text x="316" y="262">Tubo barrido sobre</text>
+    <text x="316" y="284">una curva: plátano,</text>
+    <text x="316" y="306">ají, cecina, chorizo</text>
+    <text x="316" y="338">Toro propio: picarón</text>
+
+    <text x="596" y="110">Color por vértice para</text>
+    <text x="596" y="132">manchas y vetas</text>
+    <text x="596" y="164">sRGB a lineal (3),</text>
+    <text x="596" y="186">como pide glTF</text>
+    <text x="596" y="218">PBR: rugosidad ≥ 0.6</text>
+    <text x="596" y="240">en líquidos oscuros</text>
+    <text x="596" y="272">Translúcido (BLEND):</text>
+    <text x="596" y="294">aro y vaso de licuadora</text>
+    <text x="596" y="326">Textura de madera</text>
+    <text x="596" y="348">generada con numpy</text>
+
+    <text x="876" y="110">Se posan las piezas</text>
+    <text x="876" y="132">sobre la superficie</text>
+    <text x="876" y="154">(apoyar, fondo_wok)</text>
+    <text x="876" y="186">Centro en el origen,</text>
+    <text x="876" y="208">base en y = 0</text>
+    <text x="876" y="240">Se quitan caras sin</text>
+    <text x="876" y="262">área y vértices sueltos</text>
+    <text x="876" y="294">El paso N reúne lo</text>
+    <text x="876" y="316">acumulado hasta N</text>
+
+    <text x="1156" y="110">glTF binario (.glb)</text>
+    <text x="1156" y="132">con normales suaves</text>
+    <text x="1156" y="164">paso-1.glb … paso-5.glb</text>
+    <text x="1156" y="196">45 archivos en 3.2 s</text>
+    <text x="1156" y="228">gltf-validator:</text>
+    <text x="1156" y="250">0 errores, 0 avisos</text>
+    <text x="1156" y="282">Salida idéntica byte</text>
+    <text x="1156" y="304">a byte al repetir</text>
+  </g>
+</svg>
