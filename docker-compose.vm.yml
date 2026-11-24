@@ -1,0 +1,36 @@
+name: cocina-peruana
+
+services:
+  backend:
+    build: ./backend
+    container_name: cocina-backend
+    restart: unless-stopped
+    mem_limit: 256m
+    env_file: .env
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/salud')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prebuilt
+    container_name: cocina-web
+    restart: unless-stopped
+    mem_limit: 64m
+    depends_on:
+      - backend
+    ports:
+      - "127.0.0.1:8082:80"
+    networks:
+      - internal
+      - edge
+
+networks:
+  internal:
+  edge:
+    external: true

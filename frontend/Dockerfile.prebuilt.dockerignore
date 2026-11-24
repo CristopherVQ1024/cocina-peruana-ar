@@ -1,0 +1,7 @@
+node_modules
+.angular
+.nx
+libs
+src
+public
+README.md
