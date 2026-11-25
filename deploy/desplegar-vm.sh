@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ZIP="${ZIP:-$HOME/cocina-dist.zip}"
-DOMINIO="${DOMINIO:-cocinaperuana.duckdns.org}"
+DOMINIO="${DOMINIO:-cocinaperuanaar.duckdns.org}"
 CADDY="${CADDY:-movifi-web-1}"
 cd "$(dirname "$0")/.."
 
