@@ -18,6 +18,7 @@ import { Plato } from '../../datos/modelos';
 })
 export class PlatoPagina {
   readonly id = input.required<string>();
+  readonly pasoInicial = input<string>(undefined, { alias: 'paso' });
 
   private readonly api = inject(Api);
   private readonly idioma = inject(IdiomaService);
@@ -37,7 +38,10 @@ export class PlatoPagina {
     source: () => (this.plato.hasValue() ? this.plato.value() : undefined),
     computation: (actual, previo) => actual ?? (previo?.value?.id === this.id() ? previo.value : undefined),
   });
-  protected readonly indice = linkedSignal({ source: this.id, computation: () => 0 });
+  protected readonly indice = linkedSignal({
+    source: () => ({ id: this.id(), paso: this.pasoInicial() }),
+    computation: ({ paso }) => Math.max(0, (Number(paso) || 1) - 1),
+  });
   protected readonly pasos = computed(() => this.datos()?.pasos ?? []);
   protected readonly paso = computed(() => this.pasos()[this.indice()]);
   protected readonly siguienteModelo = computed(() => this.pasos()[this.indice() + 1]?.modelo);

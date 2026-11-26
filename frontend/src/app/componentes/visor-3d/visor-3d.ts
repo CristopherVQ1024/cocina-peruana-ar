@@ -11,10 +11,12 @@ import {
   viewChild,
 } from '@angular/core';
 import { HlmButtonImports } from '@spartan-ng/helm/button';
+import { esAndroid } from '../../datos/dispositivo';
 import { IdiomaService } from '../../datos/idioma';
 
 interface ModelViewerElement extends HTMLElement {
   canActivateAR: boolean;
+  activateAR(): Promise<void>;
 }
 
 @Component({
@@ -31,8 +33,10 @@ export class Visor3d {
   readonly siguiente = input<string>();
   readonly conAr = input(true);
   readonly vitrina = input(false);
+  readonly camara = input<string>();
 
   protected readonly t = inject(IdiomaService).t;
+  protected readonly enlaceCamara = computed(() => (this.conAr() && esAndroid() ? this.camara() : undefined));
   protected readonly progreso = signal(0);
   protected readonly puedeAr = signal(false);
   protected readonly arFallo = signal(false);
@@ -53,6 +57,11 @@ export class Visor3d {
     const siguiente = this.siguiente();
     // precarga el modelo del paso siguiente
     if (siguiente) fetch(siguiente).catch(() => {});
+  }
+
+  protected activarAr() {
+    this.arFallo.set(false);
+    this.visor().nativeElement.activateAR();
   }
 
   protected alCambiarAr(evento: Event) {

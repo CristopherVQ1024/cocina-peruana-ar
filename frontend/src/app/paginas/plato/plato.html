@@ -19,6 +19,7 @@
           [src]="actual.modelo"
           [alt]="p.nombre + ', ' + t().paso + ' ' + actual.numero + ': ' + actual.titulo"
           [siguiente]="siguienteModelo()"
+          [camara]="'/ar/' + p.id + '/' + actual.numero"
         />
       }
     </div>

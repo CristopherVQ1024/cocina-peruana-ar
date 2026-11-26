@@ -1,0 +1,169 @@
+:host {
+  --vidrio: oklch(0.2 0.01 60 / 0.55);
+
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: block;
+  overflow: hidden;
+  color: #fff;
+  background: #000;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.lienzo {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.capa {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: max(12px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  pointer-events: none;
+
+  a,
+  button {
+    pointer-events: auto;
+  }
+}
+
+.vidrio {
+  background: var(--vidrio);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titulo {
+  @extend .vidrio;
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 6px 14px;
+  border-radius: 16px;
+
+  strong,
+  span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  strong {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  span {
+    font-size: 0.8rem;
+    opacity: 0.85;
+  }
+}
+
+.redondo {
+  @extend .vidrio;
+
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: inherit;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    transform 160ms ease-out,
+    opacity 160ms ease-out;
+
+  &:active {
+    transform: scale(0.94);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.35;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+}
+
+.pie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.indicacion {
+  @extend .vidrio;
+
+  max-width: 100%;
+  margin: 0;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  text-align: center;
+  text-wrap: balance;
+  border-radius: 999px;
+}
+
+.pasos {
+  @extend .vidrio;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+
+  .redondo {
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+.contador {
+  min-width: 96px;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.aviso {
+  @extend .vidrio;
+
+  align-self: center;
+  max-width: 340px;
+  margin-block: auto;
+  padding: 24px;
+  text-align: center;
+  border-radius: 20px;
+
+  p {
+    margin: 0 0 16px;
+  }
+}

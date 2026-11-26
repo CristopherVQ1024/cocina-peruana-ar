@@ -1,0 +1,56 @@
+<canvas #lienzo class="lienzo" (click)="tocar($event)"></canvas>
+
+<div class="capa">
+  <header class="barra">
+    <a class="redondo" [href]="volver()" [attr.aria-label]="t().cerrar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg>
+    </a>
+    @if (plato.hasValue()) {
+      <div class="titulo">
+        <strong>{{ plato.value().nombre }}</strong>
+        @if (actual(); as p) {
+          <span>{{ t().paso }} {{ p.numero }} · {{ p.titulo }}</span>
+        }
+      </div>
+    }
+  </header>
+
+  @switch (estado()) {
+    @case ('movil') {
+      <div class="aviso">
+        <p>{{ t().camaraSoloMovil }}</p>
+        <a hlmBtn [href]="volver()">{{ t().volverPlato }}</a>
+      </div>
+    }
+    @case ('error') {
+      <div class="aviso" role="alert">
+        <p>{{ motivo() === 'sensores' ? t().camaraSensores : t().camaraError }}</p>
+        <a hlmBtn [href]="volver()">{{ t().volverPlato }}</a>
+      </div>
+    }
+    @default {
+      <div class="pie">
+        <p class="indicacion" role="status">{{ indicacion() }}</p>
+        @if (pasos().length > 1) {
+          <nav class="pasos" [attr.aria-label]="t().preparacion">
+            <button type="button" class="redondo" [disabled]="indice() === 0" [attr.aria-label]="t().anterior" (click)="irA(indice() - 1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+            </button>
+            <span class="contador">{{ t().paso }} {{ indice() + 1 }} {{ t().de }} {{ pasos().length }}</span>
+            <button
+              type="button"
+              class="redondo"
+              [disabled]="indice() === pasos().length - 1"
+              [attr.aria-label]="t().siguiente"
+              (click)="irA(indice() + 1)"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+          </nav>
+        }
+      </div>
+    }
+  }
+</div>

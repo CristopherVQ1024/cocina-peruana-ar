@@ -49,6 +49,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "{xr.js,xr-slam.js,LICENSE}",
+                "input": "node_modules/@8thwall/engine-binary/dist",
+                "output": "xr"
               }
             ],
             "styles": [
