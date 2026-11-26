@@ -97,7 +97,7 @@ async def gemini(asistente: Asistente, plato, p: dict, condicion: str) -> Respue
             plato_id=plato.id, pregunta=p["pregunta"], idioma=p["idioma"], paso=p.get("paso")))
     sistema, partes = mensajes(plato, p, condicion)
     respuesta = await asistente._cliente.aio.models.generate_content(
-        model=asistente._modelo,
+        model=asistente.modelos[0],
         contents=[types.Content(role="user", parts=[types.Part(text=t)]) for t in partes],
         config=types.GenerateContentConfig(system_instruction=sistema, response_mime_type="application/json",
                                            response_schema=RespuestaAsistente, temperature=0.3),
@@ -116,6 +116,12 @@ async def ollama(cliente: httpx.AsyncClient, modelo: str, plato, p: dict, condic
     return RespuestaAsistente.model_validate_json(r.json()["message"]["content"])
 
 
+def un_modelo(modelo: str) -> Asistente:
+    # mide un solo modelo sin respaldo y con la espera que pone cada corrida
+    ajustes = {"gemini_model": modelo, "gemini_fallback_models": "", "gemini_timeout_total_s": 300}
+    return Asistente(get_settings().model_copy(update=ajustes))
+
+
 def archivo(prefijo: str, modelo: str) -> Path:
     return SALIDA / f"{prefijo}_{modelo.replace(':', '_')}.jsonl"
 
@@ -126,7 +132,7 @@ async def correr_respuestas(spec: str, limite: int | None):
     platos = cargar_platos()
     preguntas = json.loads((AQUI / "preguntas.json").read_text(encoding="utf-8"))
     hechas = {(f["condicion"], f["qid"]) for f in leer(ruta) if "error" not in f}
-    asistente = Asistente(get_settings().gemini_api_key, modelo) if proveedor == "gemini" else None
+    asistente = un_modelo(modelo) if proveedor == "gemini" else None
     pausa = 4.0 if proveedor == "gemini" else 0.0
     cuenta = 0
     async with httpx.AsyncClient(timeout=300) as cliente:
@@ -158,7 +164,7 @@ async def correr_respuestas(spec: str, limite: int | None):
 
 async def correr_traducciones(modelo: str):
     ruta = archivo("traducciones", modelo)
-    asistente = Asistente(get_settings().gemini_api_key, modelo)
+    asistente = un_modelo(modelo)
     hechas = {(f["plato"], f["idioma"]) for f in leer(ruta) if "error" not in f}
     for plato in cargar_platos().values():
         for idioma in ("en", "pt", "fr"):

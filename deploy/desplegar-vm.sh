@@ -37,6 +37,8 @@ python3 -m zipfile -e "$ZIP" frontend/
 
 echo "== Contenedores"
 docker compose -f docker-compose.vm.yml up -d --build
+# nginx resuelve la IP del backend solo al arrancar
+docker restart cocina-web >/dev/null
 
 echo "== Caddy"
 docker network connect edge "$CADDY" 2>/dev/null || true
